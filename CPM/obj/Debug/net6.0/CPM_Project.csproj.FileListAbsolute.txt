@@ -354,3 +354,4 @@
 /Users/bangsat/RiderProjects/BSSB_CPM/CPM/obj/Debug/net6.0/CPM_Project.pdb
 /Users/bangsat/RiderProjects/BSSB_CPM/CPM/obj/Debug/net6.0/CPM_Project.genruntimeconfig.cache
 /Users/bangsat/RiderProjects/BSSB_CPM/CPM/obj/Debug/net6.0/ref/CPM_Project.dll
+/Users/bangsat/RiderProjects/BSSB_CPM/CPM/obj/Debug/net6.0/CPM_Project.sourcelink.json
