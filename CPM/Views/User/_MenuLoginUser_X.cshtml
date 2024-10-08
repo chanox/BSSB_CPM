@@ -1,0 +1,274 @@
+﻿@model CPM_Project.Models.LoginUser
+
+<form id="form-login" asp-antiforgery="true" data-plus-as-tab="true">
+    @*<div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+            <p class="lead fw-normal mb-0 me-3">Sign in with</p>
+            <button type="button" class="btn btn-primary btn-floating mx-1">
+                <i class="fab fa-facebook-f"></i>
+            </button>
+
+            <button type="button" class="btn btn-primary btn-floating mx-1">
+                <i class="fab fa-twitter"></i>
+            </button>
+
+            <button type="button" class="btn btn-primary btn-floating mx-1">
+                <i class="fab fa-linkedin-in"></i>
+            </button>
+        </div>*@
+
+    @*<div class="divider d-flex align-items-center my-4">
+            <p class="text-center fw-bold mx-3 mb-0">Or</p>
+        </div>*@
+
+    <div class="text-center text-lg-start mt-4 pt-2">
+        <img id="LogoImage" src="~/BSSBLogo.png" />
+    </div>
+
+    <div class="divider d-flex align-items-center my-4">
+        <p class="text-navy text-center fw-bold mx-3 mb-0" style="font-size:20px;">Cash Management System</p>
+    </div>
+
+    <div class="text-center mb-3">
+        <a class="text-black">Sign to account!</a>
+    </div>
+
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+        <input asp-for="USER_NAME" class="form-control form-control-lg"
+               placeholder="Enter a valid username" />
+        <span asp-validation-for="USER_NAME" class="text-danger"></span>
+    </div>
+
+    <!-- Password input -->
+    <div class="form-outline mb-3">
+        <input asp-for="PASSWORD" type="password" class="form-control form-control-lg"
+               placeholder="Enter password" />
+        <span asp-validation-for="PASSWORD" class="text-danger"></span>
+    </div>
+
+    @*<div class="text-right">
+        <a href="#!" class="text-navy">Forgot password?</a>
+    </div>*@
+
+    <div class="text-center text-lg-start mt-4 pt-2">
+        <button id="bLogin" type="button" class="btn btn-primary btn-lg ladda-button ldLogin" data-style="zoom-in"
+                style="padding-left: 2.5rem; padding-right: 2.5rem;">
+            Login
+        </button>
+        <p class="small fw-bold mt-2 pt-1 mb-0">
+            Jika terjadi gagal login, harap hubungi <strong class="text-navy">Bank Sulselbar</strong>
+            @*<a href="#!" class="link-danger">Register</a>*@
+        </p>
+    </div>
+
+</form>
+
+<style>
+    .swal2-popup {
+        font-size: 1.2rem !important;
+    }
+
+    .swal2-confirm {
+        background-color: #3085d6 !important;
+    }
+
+    .swal2-cancel {
+        background-color: #d33 !important;
+    }
+</style>
+
+<environment names="Staging,Production,Development">
+    <!-- RSA Encrypted -->
+    <script src="~/lib_addon/JocysComJavascript/RSACrypt.js"></script>
+    <script src="~/lib_addon/JocysComJavascript/System.debug.js"></script>
+    <script src="~/lib_addon/JocysComJavascript/System.IO.debug.js"></script>
+    <script src="~/lib_addon/JocysComJavascript/System.Text.debug.js"></script>
+    <script src="~/lib_addon/JocysComJavascript/System.Convert.debug.js"></script>
+    <script src="~/lib_addon/JocysComJavascript/System.BitConverter.debug.js"></script>
+    <script src="~/lib_addon/JocysComJavascript/System.BigInt.debug.js"></script>
+    <script src="~/lib_addon/JocysComJavascript/System.Security.Cryptography.debug.js"></script>
+    <script src="~/lib_addon/JocysComJavascript/System.Security.Cryptography.SHA1.debug.js"></script>
+    <script src="~/lib_addon/JocysComJavascript/System.Security.Cryptography.RSA.debug.js"></script>
+
+    <script src="~/lib_addon/image-profile.js"></script>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/popper/popper.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/lib/metisMenu/dist/jquery.metisMenu.js"></script>
+    <script src="~/lib/pace/pace.min.js"></script>
+    <script src="~/lib/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="~/lib/jquery.dotdotdot/src/jquery.dotdotdot.js"></script>
+    <script src="~/js/script.js" asp-append-version="true"></script>
+
+    <!-- Ladda -->
+    <script src="~/lib/ladda/dist/spin.min.js"></script>
+    <script src="~/lib/ladda/dist/ladda.min.js"></script>
+    <script src="~/lib/ladda/dist/ladda.jquery.min.js"></script>
+    <script src="~/lib/sweetalert/dist/sweetalert-dev.js"></script>
+
+    <!-- TabAsEnter -->
+    <script src="~/lib_addon/JoelPurra/emulatetab.joelpurra.js"></script>
+    <script src="~/lib_addon/JoelPurra/plusastab.joelpurra.js"></script>
+
+    <script src="~/lib/bootbox/bootbox.js"></script>
+</environment>
+
+<script type="text/javascript">
+    $('#USER_NAME').focus();
+
+    $('#bLogin').click(function () {
+        ValidasiLogin($('#USER_NAME').val(), $('#PASSWORD').val());
+
+        @*swal({
+            title: 'Konfirmasi',
+            text: 'Apakah transaksi sudah benar?',
+            type: 'question',
+            CancelButton: true,
+            showCancelButton: true,
+            confirmButtonText: 'Ya',
+            cancelButtonText: 'Tidak',
+            cancelButtonColor: '#d33',
+            showLoaderOnConfirm: true,
+            preConfirm: (login) => {
+                return fetch(ValidasiLogin($('#USER_NAME').val(), $('#PASSWORD').val()));
+            },
+            allowOutsideClick: () => !swal.isLoading(),
+        })*@
+    });
+
+    function ValidasiLogin(USER_NAME, PASS) {
+        var l = $('.ldLogin').ladda();
+
+        l.ladda('start');
+        $.get('/User/KeyGenerator', null, function (result) {
+
+            var xData = {};
+            xData.__RequestVerificationToken = $('[name=__RequestVerificationToken]').val();
+            @*xData.CaptchaInputText = $('#CaptchaInputText').val();
+            xData.CaptchaDeText = $('#CaptchaDeText').val();*@
+
+            xData.CryptUSER_NAME = RSAEncrypt($('#USER_NAME').val(), result);
+            xData.CryptPASSWORD = RSAEncrypt($('#PASSWORD').val(), result);
+
+            $.post('/User/ValidasiLogin', xData, function (result) {
+                if (result.substring(0, 1) == '/') {
+                    @*l.ladda('stop');*@
+                    window.location.href = result;
+                    return;
+                }
+                else if (result == '7') {
+                    @*l.ladda('stop');*@
+                    window.location.href = '/User/GantiPassword';
+                    return;
+                }
+                else {
+                    l.ladda('stop');
+
+                    @*$('#LoginUser').html(result);*@
+                    $('#USER_NAME').focus();
+
+                    ShowMessage(result);
+
+                    @*ReloadAction();*@
+                    return;
+                }
+            });
+        });
+    }
+
+    function ShowMessage(kode) {
+        if (kode == '9') {
+            @*swal('Kesalahan', 'Maaf, username atau password tidak sesuai...', 'error')
+                .then(() => { $('#USER_NAME').focus(); });*@
+
+            bootbox.alert({
+                //title: 'Kesalahan',
+                message: 'Maaf, username atau password tidak sesuai...',
+                className: 'shake animated',
+                //onEscape: true,
+                backdrop: true,
+                centerVertical: true,
+                callback: function () {
+                    setTimeout(function () {
+                        $('#USER_NAME').focus();
+                    }, 10);
+                }
+            });
+
+            @*bootbox.dialog({
+                title: 'Kesalahan',
+                message: 'Maaf, username atau password tidak sesuai...',
+                className: 'shake animated',
+                backdrop: true,
+                centerVertical: true,
+                buttons: {
+                    OK: {
+                        label: "OK",
+                        className: 'btn-primary',
+                        callback: function () {
+                            setTimeout(function () {
+                                $('#USER_NAME').focus();
+                            }, 10);
+                        }
+                    }
+                }
+            });*@
+        }
+        else if (kode == '8') {
+            @*swal('Kesalahan', 'Maaf, username tidak aktif atau terblokir. Harap hubungi administrator...', 'error')
+                .then(() => { $('#USER_NAME').focus(); });*@
+
+            bootbox.alert({
+                //title: 'Kesalahan',
+                message: 'Maaf, username tidak aktif atau terblokir. Harap hubungi administrator...',
+                className: 'shake animated',
+                //onEscape: true,
+                backdrop: true,
+                centerVertical: true,
+                callback: function () {
+                    setTimeout(function () {
+                        $('#USER_NAME').focus();
+                    }, 10);
+                }
+            });
+        }
+        else if (kode == '6') {
+            @*swal('Kesalahan', 'Maaf, username anda terblokir. Harap coba 5 menit lagi...', 'error')
+                .then(() => { $('#USER_NAME').focus(); });*@
+
+            bootbox.alert({
+                //title: 'Kesalahan',
+                message: 'Maaf, username anda terblokir, harap coba 5 menit lagi...',
+                className: 'shake animated',
+                //onEscape: true,
+                backdrop: true,
+                centerVertical: true,
+                callback: function () {
+                    setTimeout(function () {
+                        $('#USER_NAME').focus();
+                    }, 10);
+                }
+            });
+        }
+        else if (kode == '10') {
+            @*swal('Kesalahan', 'Maaf, kode yang dimasukan salah...', 'error')
+                .then(() => { $('#USER_NAME').focus(); });*@
+
+            bootbox.alert({
+                //title: 'Kesalahan',
+                message: 'Maaf, kode yang dimasukan salah...',
+                className: 'shake animated',
+                //onEscape: true,
+                backdrop: true,
+                centerVertical: true,
+                callback: function () {
+                    setTimeout(function () {
+                        $('#USER_NAME').focus();
+                    }, 10);
+                }
+            });
+        }
+    }
+
+</script>

@@ -1,0 +1,176 @@
+﻿@using CPM_Project.Helpers
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>RAS | @ViewData["Title"]</title>
+        <link rel="icon" type="image/x-icon" href="~/favicon.ico">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <!-- Add local styles, mostly for plugins css file -->
+        @if (IsSectionDefined("Styles"))
+            {@RenderSection("Styles", required: false)}
+
+        @*<environment names="Development">
+            <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+            <link rel="stylesheet" href="~/lib/fontawesome/css/font-awesome.css" />
+            <link rel="stylesheet" href="~/lib/animate.css/animate.css" />
+            <link rel="stylesheet" href="~/Icons/pe-icon-7-stroke/css/pe-icon-7-stroke.css" />
+            <link rel="stylesheet" href="~/lib/metisMenu/dist/metisMenu.css" />
+            <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+        </environment>*@
+        <environment names="Staging,Production,Development">
+            <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+            <link rel="stylesheet" href="~/lib/fontawesome/css/font-awesome.css" />
+            <link rel="stylesheet" href="~/lib/animate.css/animate.css" />
+            <link rel="stylesheet" href="~/Icons/pe-icon-7-stroke/css/pe-icon-7-stroke.css" />
+            <link rel="stylesheet" href="~/lib/metisMenu/dist/metisMenu.css" />
+
+            <link rel="stylesheet" href="~/lib/ladda/dist/ladda-themeless.min.css" />
+            <link rel="stylesheet" href="~/lib/sweetalert2/dist/sweetalert2.css" />
+            @*<link rel="stylesheet" href="~/lib/sweetalert/lib/sweetalert.css" />*@
+            <link rel="stylesheet" href="~/lib/toastr/lib/toastr.min.css" />
+            
+            @*<link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />*@
+            <link rel="stylesheet" href="~/css/style_v2.css" asp-append-version="true" />
+            <link rel="stylesheet" href="~/css/back_style.css" asp-append-version="true" />
+        </environment>
+
+
+        @*@Html.ApplicationInsightsJavaScript(TelemetryConfiguration)*@
+        @*@Html.Raw(JavaScriptSnippet.FullScript)*@
+    </head>
+    <body class="@Html.PageClass() fixed-navbar sidebar-scroll light-skin hide-sidebar">
+        <!-- Simple splash screen-->
+        <div class="splash"> <div class="splash-title"><h1>Homer - Responsive Admin Theme</h1><p>Special Admin Theme for small and medium webapp with very clean and aesthetic style and feel. </p><div class="spinner"> <div class="rect1"></div> <div class="rect2"></div> <div class="rect3"></div> <div class="rect4"></div> <div class="rect5"></div> </div> </div> </div>
+        @*<div class="splash"> <div class="color-line"></div><div class="splash-title"><h1>Homer - Responsive Admin Theme</h1><p>Special Admin Theme for small and medium webapp with very clean and aesthetic style and feel. </p><div class="spinner"> <div class="rect1"></div> <div class="rect2"></div> <div class="rect3"></div> <div class="rect4"></div> <div class="rect5"></div> </div> </div> </div>*@
+        <!--[if lt IE 7]>
+        <p class="alert alert-danger">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+        <!-- Header -->
+        <div id="header">
+            <partial name="_Header" />
+        </div>
+
+        <!-- Navigation -->
+        <aside id="menu">
+            <partial name="_Navigation" />
+        </aside>
+
+        <!-- Main view  -->
+        <div id="wrapper">
+            @RenderBody()
+
+            <!-- Right Sidebar -->
+            <partial name="_Right_Sidebar" />
+
+            <!-- Footer-->
+            <partial name="_Footer" />
+        </div>
+
+        @*<environment names="Development">
+            <script src="~/lib/jquery/dist/jquery.js"></script>
+            <script src="~/lib/slimScroll/jquery.slimscroll.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="~/lib/iCheck/icheck.js"></script>
+            <script src="~/lib/metisMenu/dist/metisMenu.js"></script>
+            <script src="~/lib/sparkline/index.js"></script>
+            <script src="~/js/homer.js"></script>
+        </environment>*@
+        <environment names="Staging,Production,Development">
+            <script src="~/lib/jquery/dist/jquery.min.js"></script>
+            <script src="~/lib/jquery-validation/jquery.validate.min.js"></script>
+            <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+            <script src="~/lib/slimScroll/jquery.slimscroll.min.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+            <script src="~/lib/iCheck/icheck.min.js"></script>
+            <script src="~/lib/metisMenu/dist/metisMenu.min.js"></script>
+            <script src="~/lib/sparkline/index.js"></script>
+
+            <!-- Ladda -->
+            <script src="~/lib/ladda/dist/spin.min.js"></script>
+            <script src="~/lib/ladda/dist/ladda.min.js"></script>
+            <script src="~/lib/ladda/dist/ladda.jquery.min.js"></script>
+
+            <!-- TabAsEnter -->
+            <script src="~/lib_addon/JoelPurra/emulatetab.joelpurra.js"></script>
+            <script src="~/lib_addon/JoelPurra/plusastab.joelpurra.js"></script>
+
+            <script src="~/lib/sweetalert2/dist/sweetalert2.js"></script>
+            @*<script src="~/lib/sweetalert/lib/sweetalert.min.js"></script>*@
+            <script src="~/lib/toastr/lib/toastr.min.js"></script>
+            
+            <script src="~/js/homer.js" asp-append-version="true"></script>
+
+            <!-- Addon -->
+            <script src="~/lib_addon/image-profile.js"></script>
+            <script src="~/lib/idle-timer/idle-timer.min.js"></script>
+        </environment>
+
+        @RenderSection("scripts", required: false)
+
+    </body>
+</html>
+
+<style>
+    LogoImage {
+        /*position: relative;
+        top: 10px;*/
+        width: auto; /*135*/
+        height: auto; /*25*/
+    }
+
+/*    .splash {
+        background: url(/bck4.png);
+    }*/
+
+    body {
+        background: url(/bck4_v2.png);
+    }
+/*
+    #wrapper {
+        background: url(/bck4_v2.png);
+    }
+
+    #menu {
+        background: url(/bck4_v2.png);
+    }*/
+
+/*    #menu {
+        background-color: white;
+        height: 90%;
+    }*/
+
+    .swal2-popup {
+        font-size: 1.2rem !important;
+    }
+
+    .swal2-confirm {
+        background-color: #3085d6 !important;
+    }
+
+    .swal2-cancel {
+        background-color: #d33 !important;
+    }
+</style>
+
+<script type="text/javascript">
+    $('[data-toggle="tooltip"]').tooltip();
+</script>

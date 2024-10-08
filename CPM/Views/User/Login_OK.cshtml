@@ -1,0 +1,113 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout_Blank.cshtml";
+}
+
+<div class="login-container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center m-b-md">
+                <img id="LogoImage" src="~/BSSBLogo.png" />
+
+                <p class="text-success text-center" style="font-size:25px;">System Monitoring</p>
+                <a class="text-balck">Sign to account!</a>
+            </div>
+
+            <div class="hpanel">
+                <div class="panel-body" data-plus-as-tab="true">
+
+                    <div id="LoginUser"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            &copy; 2018-@DateTime.Now.Year <a href='https://banksulselbar.co.id/' target="_blank"><strong class="text-success">Bank Sulselbar</strong> <small>v0.1</small></a>
+        </div>
+    </div>
+</div>
+
+<style>
+    @*body {
+        background: url(/bck4.png);
+    }*@
+
+    body {
+        background: url(/bck4_v2.png);
+    }
+
+</style>
+
+@section Scripts {
+    <environment names="Staging,Production,Development">
+        <!-- TabAsEnter -->
+        <script src="~/lib_addon/JoelPurra/emulatetab.joelpurra.js"></script>
+        <script src="~/lib_addon/JoelPurra/plusastab.joelpurra.js"></script>
+
+        @*<!-- Ladda -->
+            <script src="~/lib/ladda/dist/spin.min.js"></script>
+            <script src="~/lib/ladda/dist/ladda.min.js"></script>
+            <script src="~/lib/ladda/dist/ladda.jquery.min.js"></script>
+            <script src="~/lib/sweetalert/dist/sweetalert-dev.js"></script>-->
+            <script src="~/lib/sweetalert-bootsrap/sweetalert2.js"></script>
+
+            <script src="~/lib/bootbox/bootbox.all.js"></script>*@
+    </environment>
+
+    <script type="text/javascript">
+
+    $(document).ready(function () {
+        ShowLogin();
+    });
+
+    // AUTOCOMPLETE OFF
+    $(document).on('focus', ':input', function () {
+        $(this).attr('autocomplete', 'off');
+    });
+
+    // LOCK
+    history.pushState(null, null, document.URL);
+    window.addEventListener('popstate', function () {
+        history.pushState(null, null, document.URL);
+    });
+
+    // Tab to Enter
+    JoelPurra.PlusAsTab.setOptions({
+        // Use enter instead of plus
+        // Number 13 found through demo at
+        // http://api.jquery.com/event.which/
+        key: 13
+    });
+
+    function ShowLogin() {
+        $.get('/Login', null, function (result) {
+            $('#LoginUser').html(result);
+        });
+    }
+
+    @*function ReloadAction() {
+        $('#bLogin').click(function () {
+            ValidasiLogin($('#USER_NAME').val(), $('#PASSWORD').val());
+
+            //swal({
+            //    title: 'Konfirmasi',
+            //    text: 'Apakah transaksi sudah benar?',
+            //    type: 'question',
+            //    CancelButton: true,
+            //    showCancelButton: true,
+            //    confirmButtonText: 'Ya',
+            //    cancelButtonText: 'Tidak',
+            //    cancelButtonColor: '#d33',
+            //    showLoaderOnConfirm: true,
+            //    preConfirm: (login) => {
+            //        return fetch(ValidasiLogin($('#USER_NAME').val(), $('#PASSWORD').val()));
+            //    },
+            //    allowOutsideClick: () => !swal.isLoading(),
+            //})
+        });
+    }*@
+
+    </script>
+}
+

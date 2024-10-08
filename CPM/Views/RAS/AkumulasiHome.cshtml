@@ -1,0 +1,749 @@
+<div class="small-header">
+    <div class="hpanel">
+        <div class="panel-body">
+            <div id="hbreadcrumb" class="pull-right">
+                    <ol class="hbreadcrumb breadcrumb">
+                        <li><a href="#">@ViewBag.Header</a></li>
+                        <li class="active">
+                            <span>@ViewBag.Title </span>
+                        </li>
+                    </ol>
+                </div>
+            <h2 class="font-light m-b-xs">
+                @ViewBag.Header
+            </h2>
+            <small>@ViewBag.Keterangan</small>
+        </div>
+    </div>
+</div>
+
+<div class="content transition animated fadeIn">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="hpanel">
+                <div class="panel-heading hbuilt">
+                    @* <h3 class="m-b-xs">FILTER</h3> *@
+                    <i class="fa fa-quote-right"></i> Menampilkan data sesuai pilihan tanggal & cabang
+                </div>
+                
+                <div class="panel-body">
+                    @* <p><i class="fa fa-quote-right"></i> Menampilkan data sesuai pilihan tanggal & cabang</p> *@
+                    @* <br/> *@
+                    <div class="row">
+                        <form class="form-horizontal">
+                            <div class="col-md-12">
+                                <div class="col-md-7">
+                                    <div class="form-group">
+                                        @* <label class="control-label col-md-2">Tanggal</label> *@
+                                        @* <div class="input-group date"> *@
+                                        @*     <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span> *@
+                                        @*     <input type="text" id="tglData" class="form-control"> *@
+                                        @* </div> *@
+                                        <div class="input-daterange input-group col-md-11">
+                                            <span class="input-group-addon">&nbsp;Tanggal&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                                            <input type="text" class="form-control" name="start" id="tglAwal">
+                                            <span class="input-group-addon">s.d</span>
+                                            <input type="text" class="form-control" name="end" id="tglAkhir">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group col-md-5">
+                                    <span class="input-group-addon">Cabang&nbsp;&nbsp;</span>
+                                    <select id="kdCabang" asp-items="ViewBag.ListCabang" class="form-control select2-cabang">
+                                        <option selected>Semua Cabang</option>
+                                    </select>
+                                </div>
+                                @* <div class="col-md-5"> *@
+                                @*     <div class="form-group"> *@
+                                @*         <label class="control-label col-md-3">Cabang</label> *@
+                                @*         <div class="col-md-9"> *@
+                                @*             <select id="kdCabang" asp-items="ViewBag.ListCabang" class="form-control select2-cabang"> *@
+                                @*                 <option selected>Semua Cabang</option> *@
+                                @*             </select> *@
+                                @*         </div> *@
+                                @*     </div> *@
+                                @* </div> *@
+                                @* <div class="col-sm-2"> *@
+                                @*     <button type="button" id="bFilter" class="btn btn-primary btn-outline"><i class="fa fa-search"></i> Filter Data</button> *@
+                                @* </div> *@
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="hpanel">
+
+                <div class="panel-heading">
+                    @* <div class="pull-right"> *@
+                    @*     <a class="btn btn-success" id="bTambahUser" data-toggle="tooltip" data-placement="top" title="Tamplikan Lengkap" href="@Url.Action("DaftarInHouse", "BPDP")"><i class="fa fa-th-list"></i></a> *@
+                    @* </div> *@
+                    <h3 class="m-b-xs text-success">TABUNGAN</h3>
+                    <i class="fa fa-quote-right"></i> Menampilkan seluruh jenis produk tabungan
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table id="dtTabungan" class="table table-striped table-bordered table-hover" style="width:100%">
+                            <thead>
+                            <tr>
+                                <th class="text-center">No</th>
+                                <th class="text-center">Tanggal</th>
+                                <th class="text-center">Nama Produk</th>
+                                <th class="text-center">Total Nominal</th>
+                                <th class="text-center">Total Bunga</th>
+                                <th class="text-center">Total Bunga CPM_Project</th>
+                            </tr>
+                            </thead>
+                            <tfoot>
+                            <tr>
+                                <th colspan="3" class="text-center"></th>
+                                <th class="text-right"></th>
+                                <th class="text-right"></th>
+                                <th class="text-right"></th>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="hpanel">
+    
+                <div class="panel-heading">
+                    @* <div class="pull-right"> *@
+                    @*     <a class="btn btn-info" id="bTambahUser" data-toggle="tooltip" data-placement="top" title="Tamplikan Lengkap" href="@Url.Action("DaftarInHouse", "BPDP")"><i class="fa fa-th-list"></i></a> *@
+                    @* </div> *@
+                    <h3 class="m-b-xs text-warning">DEPOSITO</h3>
+                    <i class="fa fa-quote-right"></i> Menampilkan seluruh jenis produk deposito
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table id="dtDeposito" class="table table-striped table-bordered table-hover" cellpadding="0" style="width:100%">
+                            <thead>
+                            <tr>
+                                <th class="text-center">No</th>
+                                <th class="text-center">Tanggal</th>
+                                <th class="text-center">Nama Produk</th>
+                                <th class="text-center">Total Nominal</th>
+                                <th class="text-center">Total Bunga</th>
+                                <th class="text-center">Total Bunga SRAK</th>
+                            </tr>
+                            </thead>
+                            <tfoot>
+                            <tr>
+                                <th colspan="3" class="text-center"></th>
+                                <th class="text-right"></th>
+                                <th class="text-right"></th>
+                                <th class="text-right"></th>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="hpanel">
+    
+                <div class="panel-heading">
+                    @* <div class="pull-right"> *@
+                    @*     <a class="btn btn-danger" id="bTambahUser" data-toggle="tooltip" data-placement="top" title="Tamplikan Lengkap" href="@Url.Action("DaftarInHouse", "BPDP")"><i class="fa fa-th-list"></i></a> *@
+                    @* </div> *@
+                    <h3 class="m-b-xs text-info">GIRO</h3>
+                    <i class="fa fa-quote-right"></i> Menampilkan seluruh jenis produk giro
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table id="dtGiro" class="table table-striped table-bordered table-hover" cellpadding="0" style="width:100%">
+                            <thead>
+                            <tr>
+                                <th class="text-center">No</th>
+                                <th class="text-center">Tanggal</th>
+                                <th class="text-center">Nama Produk</th>
+                                <th class="text-center">Total Nominal</th>
+                                <th class="text-center">Total Bunga</th>
+                                <th class="text-center">Total Bunga SRAK</th>
+                            </tr>
+                            </thead>
+                            <tfoot>
+                            <tr>
+                                <th colspan="3" class="text-center"></th>
+                                <th class="text-right"></th>
+                                <th class="text-right"></th>
+                                <th class="text-right"></th>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="hpanel">
+    
+                <div class="panel-heading">
+                    @* <div class="pull-right"> *@
+                    @*     <a class="btn btn-warning" id="bTambahUser" data-toggle="tooltip" data-placement="top" title="Tamplikan Lengkap" href="@Url.Action("DaftarInHouse", "BPDP")"><i class="fa fa-th-list"></i></a> *@
+                    @* </div> *@
+                    <h3 class="m-b-xs text-danger">KREDIT</h3>
+                    <i class="fa fa-quote-right"></i> Menampilkan seluruh jenis produk pinjaman / kredit
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table id="dtPinjaman" class="table table-striped table-bordered table-hover" cellpadding="0" style="width:100%">
+                            <thead>
+                            <tr>
+                                <th class="text-center">No</th>
+                                <th class="text-center">Tanggal</th>
+                                <th class="text-center">Nama Produk</th>
+                                <th class="text-center">Total Nominal</th>
+                                <th class="text-center">Total Bunga</th>
+                                <th class="text-center">Total Bunga SRAK</th>
+                            </tr>
+                            </thead>
+                            <tfoot>
+                            <tr>
+                                <th colspan="3" class="text-center"></th>
+                                <th class="text-right"></th>
+                                <th class="text-right"></th>
+                                <th class="text-right"></th>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section Styles {
+    <environment names="Staging,Production,Development">
+        <link rel="stylesheet" href="~/lib/toastr/lib/toastr.min.css" />
+        <link rel="stylesheet" href="~/lib/datatables/media/css/dataTables.bootstrap.min.css" />
+        <link rel="stylesheet" href="~/lib/datatables/media/css/responsive.dataTables.min.css" />
+        <link rel="stylesheet" href="~/lib/datatables.net-bs/css/dataTables.bootstrap.min.css" />
+        <link rel="stylesheet" href="~/lib/select2/select2.css" />
+        <link rel="stylesheet" href="~/lib/select2-bootstrap/select2-bootstrap.css" />
+        <link rel="stylesheet" href="~/lib/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css" />
+        <link rel="stylesheet" href="~/lib/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+        <link rel="stylesheet" href="~/lib/clockpicker/dist/bootstrap-clockpicker.min.css" />
+    </environment>
+}
+
+@section Scripts {
+    <environment names="Development,Staging,Production">
+        <script src="~/lib/datatables/media/js/jquery.dataTables.min.js"></script>
+        <script src="~/lib/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="~/lib/datatables/media/js/dataTables.responsive.min.js"></script>
+        <script src="~/lib/datatables/media/js/dataTables.fixedColumns.min.js"></script>
+        <script src="~/lib/pdfmake/build/pdfmake.min.js"></script>
+        <script src="~/lib/pdfmake/build/vfs_fonts.js"></script>
+        <script src="~/lib/datatables.net-buttons/js/buttons.html5.min.js"></script>
+        <script src="~/lib/datatables.net-buttons/js/buttons.print.min.js"></script>
+        <script src="~/lib/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+        <script src="~/lib/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="~/lib/select2/select2.min.js"></script>
+        <script src="~/lib/moment/moment.js"></script>
+        <script src="~/lib/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+        <script src="~/lib/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+        <script src="~/lib/clockpicker/dist/bootstrap-clockpicker.min.js"></script>
+    </environment>
+    
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $(document).idleTimer(300000);
+
+            ProfilePiture();
+            
+            //$('#tglAwal').val('@DateTime.Now.AddDays(-2).ToString("yyyy-MM-dd")');
+            $('#tglAwal').val('@ViewBag.FIRST_DATE');
+            $('#tglAwal').datepicker({ format: 'yyyy-mm-dd' });
+
+            $('#tglAkhir').val('@DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd")');
+            $('#tglAkhir').datepicker({ format: 'yyyy-mm-dd' });
+            
+            GetTabungan();
+            GetDeposito();
+            GetGiro();
+            GetPinjaman();
+        });
+
+        // Idle Time
+        $(document).on("idle.idleTimer", function (event, elem, obj) {
+            window.location = '@Url.Action("Login", "User")';
+        });
+
+        function sleep(milliseconds) {
+            var start = new Date().getTime();
+            for (var i = 0; i < 1e7; i++) {
+                if ((new Date().getTime() - start) > milliseconds) {
+                    break;
+                }
+            }
+        }
+
+        setInterval(function () { ReloadDaftar(); }, 25000);
+        
+        $('.select2-cabang').select2();
+
+        function formatMoney(amount, decimalCount = 2, decimal = ",", thousands = ".") {
+            try {
+                decimalCount = Math.abs(decimalCount);
+                decimalCount = isNaN(decimalCount) ? 2 : decimalCount;
+
+                const negativeSign = amount < 0 ? "-" : "";
+
+                let i = parseInt(amount = Math.abs(Number(amount) || 0).toFixed(decimalCount)).toString();
+                let j = (i.length > 3) ? i.length % 3 : 0;
+
+                return negativeSign +
+                    (j ? i.substr(0, j) + thousands : '') +
+                    i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousands) +
+                    (decimalCount ? decimal + Math.abs(amount - i).toFixed(decimalCount).slice(2) : "");
+            } catch (e) {
+                console.log(e)
+            }
+        }
+
+        function GetTabungan() {
+            $('#dtTabungan').DataTable().destroy();
+            $('#dtTabungan').DataTable({
+                ajax: {
+                    url: '@Url.Action("getDataAkumulasi", "SRAK")',
+                    dataSrc: '[]',
+                    type: 'GET',
+                    data: { tglAwal: $('#tglAwal').val(), tglAkhir: $('#tglAkhir').val(), kdKNTR: $('#kdCabang').val(), jenisProduk: 'TABUNGAN' }
+                    //async: true
+                    // error: function (xhr, error, code) {
+                    //    swal.fire('Kesalahan', 'Maaf, gagal mengambil data dari server', 'error')
+                    // }
+                },
+                columns: [
+                    { data: null, className: 'text-center', width: '5%', render: function (data, type, row, meta) { return meta.row + 1; } },
+                    { data: 'TGL_DATA', className: 'text-center', render: function (d) { return moment(d).format("DD/MM/YYYY") } },
+                    { data: 'PRODUK_CABANG', className: 'text-left', render: function (data, type, row) { return data } },
+                    { data: 'TOT_NOMINAL', className: 'text-right', render: $.fn.dataTable.render.number('.', ',', 2) },
+                    { data: 'TOT_BUNGA', className: 'text-right', render: $.fn.dataTable.render.number('.', ',', 2) },
+                    { data: 'TOT_NOMINAL_SRAK', className: 'text-right', render: $.fn.dataTable.render.number('.', ',', 2) }
+                ],
+                //processing: true,
+                //serverSide: true,
+                autoWidth: false,
+                oLanguage: { sSearch: 'Cari:' },
+                dom: "<'row'<'col-sm-4'l><'col-sm-4 text-center'B><'col-sm-4'f>>tp",
+                buttons: [
+                    { extend: 'copy', className: 'btn-sm' },
+                    { extend: 'csv', title: 'Hasil Akumulasi Perhitungan SRAK', className: 'btn-sm' },
+                    {
+                        extend: 'pdf',
+                        title: 'Hasil Akumulasi Perhitungan SRAK',
+                        orientation: 'landscape',
+                        pageSize: 'LEGAL',
+                        className: 'btn-sm',
+                    }
+                ],
+                aLengthMenu: [
+                    [10, 25, 50, 100, 200, -1],
+                    [10, 25, 50, 100, 200, "All"]
+                ],
+                iDisplayLength: -1,
+                drawCallback: function (settings) {
+                    //if (!$('#dtTabungan').parent().hasClass("table-responsive")) {
+                    //   $('#dtTabungan').wrap("<div class='table-responsive'></div>");
+                    //}
+
+                    $('#dtTabungan').wrap("<div class='table-responsive'></div>");
+                    $('[data-toggle="tooltip"]').tooltip();
+                },
+                footerCallback: function ( row, data, start, end, display ) {
+                    var api = this.api(), data;
+
+                    var intVal = function ( i ) {
+                        return typeof i === 'string' ?
+                            i.replace(/[\$,]/g, '')*1 :
+                            typeof i === 'number' ?
+                                i : 0;
+                    };
+
+                    var totalNominal = api
+                        .column(3, { page: 'current'})
+                        .data()
+                        .reduce( function (a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0 );
+
+                    var totalBunga = api
+                        .column(4, { page: 'current'})
+                        .data()
+                        .reduce( function (a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0 );
+
+                    var totalBungaSRAK = api
+                        .column(5, { page: 'current'})
+                        .data()
+                        .reduce( function (a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0 );
+
+                    $(api.column(0).footer()).html('T O T A L');
+                    $(api.column(3).footer()).html(formatMoney(totalNominal));
+                    $(api.column(4).footer()).html(formatMoney(totalBunga));
+                    $(api.column(5).footer()).html(formatMoney(totalBungaSRAK));
+                }
+            });
+        }
+
+        function GetDeposito() {
+            $('#dtDeposito').DataTable().destroy();
+            $('#dtDeposito').DataTable({
+                ajax: {
+                    url: '@Url.Action("getDataAkumulasi", "SRAK")',
+                    dataSrc: '[]',
+                    type: 'GET',
+                    data: { tglAwal: $('#tglAwal').val(), tglAkhir: $('#tglAkhir').val(), kdKNTR: $('#kdCabang').val(), jenisProduk: 'DEPOSITO' }
+                    //async: true
+                    //error: function (xhr, error, code) {
+                    //    swal.fire('Kesalahan', 'Maaf, gagal mengambil data dari server', 'error')
+                    //}
+                },
+                columns: [
+                    { data: null, className: 'text-center', width: '5%', render: function (data, type, row, meta) { return meta.row + 1; } },
+                    { data: 'TGL_DATA', className: 'text-center', render: function (d) { return moment(d).format("DD/MM/YYYY") } },
+                    { data: 'PRODUK_CABANG', className: 'text-left', render: function (data, type, row) { return data } },
+                    { data: 'TOT_NOMINAL', className: 'text-right', render: $.fn.dataTable.render.number('.', ',', 2) },
+                    { data: 'TOT_BUNGA', className: 'text-right', render: $.fn.dataTable.render.number('.', ',', 2) },
+                    { data: 'TOT_NOMINAL_SRAK', className: 'text-right', render: $.fn.dataTable.render.number('.', ',', 2) }
+                ],
+                //processing: true,
+                //serverSide: true,
+                autoWidth: false,
+                oLanguage: { sSearch: 'Cari:' },
+                dom: "<'row'<'col-sm-4'l><'col-sm-4 text-center'B><'col-sm-4'f>>tp",
+                buttons: [
+                    { extend: 'copy', className: 'btn-sm' },
+                    { extend: 'csv', title: 'Hasil Perhitungan SRAK', className: 'btn-sm' },
+                    {
+                        extend: 'pdf',
+                        title: 'Hasil Perhitungan SRAK',
+                        orientation: 'landscape',
+                        pageSize: 'LEGAL',
+                        className: 'btn-sm',
+                    }
+                ],
+                aLengthMenu: [
+                    [10, 25, 50, 100, 200, -1],
+                    [10, 25, 50, 100, 200, "All"]
+                ],
+                iDisplayLength: -1,
+                drawCallback: function (settings) {
+                    if (!$('#dtDeposito').parent().hasClass("table-responsive")) {
+                       $('#dtDeposito').wrap("<div class='table-responsive'></div>");
+                    }
+                    
+                    $('[data-toggle="tooltip"]').tooltip();
+                },
+                footerCallback: function ( row, data, start, end, display ) {
+                    var api = this.api(), data;
+
+                    var intVal = function ( i ) {
+                        return typeof i === 'string' ?
+                            i.replace(/[\$,]/g, '')*1 :
+                            typeof i === 'number' ?
+                                i : 0;
+                    };
+
+                    var totalNominal = api
+                        .column(3, { page: 'current'})
+                        .data()
+                        .reduce( function (a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0 );
+                        
+                    var totalBunga = api
+                        .column(4, { page: 'current'})
+                        .data()
+                        .reduce( function (a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0 );
+
+                    var totalBungaSRAK = api
+                        .column(5, { page: 'current'})
+                        .data()
+                        .reduce( function (a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0 );
+
+                    $(api.column(0).footer()).html('T O T A L');
+                    $(api.column(3).footer()).html(formatMoney(totalNominal));
+                    $(api.column(4).footer()).html(formatMoney(totalBunga));
+                    $(api.column(5).footer()).html(formatMoney(totalBungaSRAK));
+                }
+            });
+        }
+
+         function GetGiro() {
+            $('#dtGiro').DataTable().destroy();
+            $('#dtGiro').DataTable({
+                ajax: {
+                    url: '@Url.Action("getDataAkumulasi", "SRAK")',
+                    dataSrc: '[]',
+                    type: 'GET',
+                    data: { tglAwal: $('#tglAwal').val(), tglAkhir: $('#tglAkhir').val(), kdKNTR: $('#kdCabang').val(), jenisProduk: 'GIRO' }
+                    //async: true
+                    //error: function (xhr, error, code) {
+                    //    swal.fire('Kesalahan', 'Maaf, gagal mengambil data dari server', 'error')
+                    //}
+                },
+                columns: [
+                    { data: null, className: 'text-center', width: '5%', render: function (data, type, row, meta) { return meta.row + 1; } },
+                    { data: 'TGL_DATA', className: 'text-center', render: function (d) { return moment(d).format("DD/MM/YYYY") } },
+                    { data: 'PRODUK_CABANG', className: 'text-left', render: function (data, type, row) { return data } },
+                    { data: 'TOT_NOMINAL', className: 'text-right', render: $.fn.dataTable.render.number('.', ',', 2) },
+                    { data: 'TOT_BUNGA', className: 'text-right', render: $.fn.dataTable.render.number('.', ',', 2) },
+                    { data: 'TOT_NOMINAL_SRAK', className: 'text-right', render: $.fn.dataTable.render.number('.', ',', 2) }
+                ],
+                //processing: true,
+                //serverSide: true,
+                autoWidth: false,
+                oLanguage: { sSearch: 'Cari:' },
+                dom: "<'row'<'col-sm-4'l><'col-sm-4 text-center'B><'col-sm-4'f>>tp",
+                buttons: [
+                    { extend: 'copy', className: 'btn-sm' },
+                    { extend: 'csv', title: 'Hasil Perhitungan SRAK', className: 'btn-sm' },
+                    {
+                        extend: 'pdf',
+                        title: 'Hasil Perhitungan SRAK',
+                        orientation: 'landscape',
+                        pageSize: 'LEGAL',
+                        className: 'btn-sm',
+                    }
+                ],
+                aLengthMenu: [
+                    [10, 25, 50, 100, 200, -1],
+                    [10, 25, 50, 100, 200, "All"]
+                ],
+                iDisplayLength: -1,
+                drawCallback: function (settings) {
+                    if (!$('#dtGiro').parent().hasClass("table-responsive")) {
+                       $('#dtGiro').wrap("<div class='table-responsive'></div>");
+                    }
+                    
+                    $('[data-toggle="tooltip"]').tooltip();
+                },
+                footerCallback: function ( row, data, start, end, display ) {
+                    var api = this.api(), data;
+
+                    var intVal = function ( i ) {
+                        return typeof i === 'string' ?
+                            i.replace(/[\$,]/g, '')*1 :
+                            typeof i === 'number' ?
+                                i : 0;
+                    };
+
+                    var totalNominal = api
+                        .column(3, { page: 'current'})
+                        .data()
+                        .reduce( function (a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0 );
+                        
+                    var totalBunga = api
+                        .column(4, { page: 'current'})
+                        .data()
+                        .reduce( function (a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0 );
+
+                    var totalBungaSRAK = api
+                        .column(5, { page: 'current'})
+                        .data()
+                        .reduce( function (a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0 );
+
+                    $(api.column(0).footer()).html('T O T A L');
+                    $(api.column(3).footer()).html(formatMoney(totalNominal));
+                    $(api.column(4).footer()).html(formatMoney(totalBunga));
+                    $(api.column(5).footer()).html(formatMoney(totalBungaSRAK));
+                }
+            });
+         }
+         
+          function GetPinjaman() {
+              $('#dtPinjaman').DataTable().destroy();
+              $('#dtPinjaman').DataTable({
+                  ajax: {
+                      url: '@Url.Action("getDataAkumulasi", "SRAK")',
+                      dataSrc: '[]',
+                      type: 'GET',
+                      data: { tglAwal: $('#tglAwal').val(), tglAkhir: $('#tglAkhir').val(), kdKNTR: $('#kdCabang').val(), jenisProduk: 'PINJAMAN' }
+                      //async: true
+                      //error: function (xhr, error, code) {
+                      //    swal.fire('Kesalahan', 'Maaf, gagal mengambil data dari server', 'error')
+                      //}
+                  },
+                  columns: [
+                      { data: null, className: 'text-center', width: '5%', render: function (data, type, row, meta) { return meta.row + 1; } },
+                      { data: 'TGL_DATA', className: 'text-center', render: function (d) { return moment(d).format("DD/MM/YYYY") } },
+                      { data: 'PRODUK_CABANG', className: 'text-left', render: function (data, type, row) { return data } },
+                      { data: 'TOT_NOMINAL', className: 'text-right', render: $.fn.dataTable.render.number('.', ',', 2) },
+                      { data: 'TOT_BUNGA', className: 'text-right', render: $.fn.dataTable.render.number('.', ',', 2) },
+                      { data: 'TOT_NOMINAL_SRAK', className: 'text-right', render: $.fn.dataTable.render.number('.', ',', 2) }
+                  ],
+                  //processing: true,
+                  //serverSide: true,
+                  autoWidth: false,
+                  oLanguage: { sSearch: 'Cari:' },
+                  dom: "<'row'<'col-sm-4'l><'col-sm-4 text-center'B><'col-sm-4'f>>tp",
+                  buttons: [
+                      { extend: 'copy', className: 'btn-sm' },
+                      { extend: 'csv', title: 'Hasil Perhitungan SRAK', className: 'btn-sm' },
+                      {
+                          extend: 'pdf',
+                          title: 'Hasil Perhitungan SRAK',
+                          orientation: 'landscape',
+                          pageSize: 'LEGAL',
+                          className: 'btn-sm',
+                      }
+                  ],
+                  aLengthMenu: [
+                      [10, 25, 50, 100, 200, -1],
+                      [10, 25, 50, 100, 200, "All"]
+                  ],
+                  iDisplayLength: -1,
+                  drawCallback: function (settings) {
+                      if (!$('#dtPinjaman').parent().hasClass("table-responsive")) {
+                         $('#dtPinjaman').wrap("<div class='table-responsive'></div>");
+                      }
+                      
+                      $('[data-toggle="tooltip"]').tooltip();
+                  },
+                  footerCallback: function ( row, data, start, end, display ) {
+                      var api = this.api(), data;
+
+                      var intVal = function ( i ) {
+                          return typeof i === 'string' ?
+                              i.replace(/[\$,]/g, '')*1 :
+                              typeof i === 'number' ?
+                                  i : 0;
+                      };
+
+                      var totalNominal = api
+                          .column(3, { page: 'current'})
+                          .data()
+                          .reduce( function (a, b) {
+                              return intVal(a) + intVal(b);
+                          }, 0 );
+
+                      var totalBunga = api
+                          .column(4, { page: 'current'})
+                          .data()
+                          .reduce( function (a, b) {
+                              return intVal(a) + intVal(b);
+                          }, 0 );
+
+                      var totalBungaSRAK = api
+                          .column(5, { page: 'current'})
+                          .data()
+                          .reduce( function (a, b) {
+                              return intVal(a) + intVal(b);
+                          }, 0 );
+
+                      $(api.column(0).footer()).html('T O T A L');
+                      $(api.column(3).footer()).html(formatMoney(totalNominal));
+                      $(api.column(4).footer()).html(formatMoney(totalBunga));
+                      $(api.column(5).footer()).html(formatMoney(totalBungaSRAK));
+                  }
+              });
+          }
+
+        function ReloadDaftar() {
+            $('#dtTabungan').DataTable().ajax.reload(null, false);
+            $('#dtGiro').DataTable().ajax.reload(null, false);
+            $('#dtDeposito').DataTable().ajax.reload(null, false);
+            $('#dtPinjaman').DataTable().ajax.reload(null, false);
+        }
+        
+        $('#kdCabang').change(function () {
+            GetTabungan();
+            GetGiro();
+            GetDeposito();
+            GetPinjaman();
+
+            var oldEffect = $('.setEffect').attr('data-effect');
+            var newEffect = $(".animation-select").val(); // bounceInRight
+        })
+
+        $('#tglAwal').change(function () {
+            GetTabungan();
+            GetGiro();
+            GetDeposito();
+            GetPinjaman();
+        })
+
+        $('#tglAkhir').change(function () {
+            GetTabungan();
+            GetGiro();
+            GetDeposito();
+            GetPinjaman();
+        })
+        
+        function reGenerateData(tglData) {
+            $.post('@Url.Action("reGenerateData", "SRAK")', { tglData: tglData }, function (data) {
+                const resData = JSON.parse(JSON.stringify(data));
+                if (resData.code === '00') {
+                    swal.fire("Sukses", resData.message, "success");
+                    ReloadDaftar();
+                }
+                else {
+                    swal.fire("Error", resData.message, "error");
+                }
+            })
+        }
+        
+        $('#breGenerate').click(function () {
+            swal.fire({
+                title: 'Konfirmasi',
+                text: 'Apakah benar data akan di hitung ulang / di reGenerate?',
+                type: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Ya, Proses',
+                cancelButtonText: 'Tidak',
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                //reverseButtons: true,
+                showLoaderOnConfirm: true,
+                //customClass: {
+                //    confirmButton: 'btn btn-primary !important;',
+                //    cancelButton: 'btn btn-danger !important;',
+                //},
+                preConfirm: () => {
+                    return new Promise(function () {
+                        reGenerateData($('#tglData').val());
+                    });
+                },
+                allowOutsideClick: () => !swal.isLoading()
+            });
+        })
+    </script>
+}

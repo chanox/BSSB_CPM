@@ -1,0 +1,61 @@
+﻿@model CPM_Project.Models.tbUsers
+
+<div class="form-horizontal" data-plus-as-tab="true">
+    <form asp-action="EditUser" id="form-edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="ID_USER" />
+        <input type="hidden" asp-for="PASSWORD" />
+        <div class="form-group">
+            <label asp-for="USER_NAME" class="control-label col-md-3"></label>
+            <div class="col-md-9">
+                <input asp-for="USER_NAME" class="form-control" style="pointer-events:none;" readonly />
+                @*<span asp-validation-for="USER_NAME" class="text-danger"></span>*@
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="NAMA_LENGKAP" class="control-label col-md-3"></label>
+            <div class="col-md-9">
+                <input asp-for="NAMA_LENGKAP" class="form-control" />
+                <span asp-validation-for="NAMA_LENGKAP" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="JENIS_USER" class="col-md-3 control-label"></label>
+            <div class="col-md-5">
+                <select asp-for="JENIS_USER" asp-items="ViewBag.ListJenisUser" class="form-control select2-jenis">
+                    @*<option disabled selected>-PILIH-</option>*@
+                </select>
+                <span asp-validation-for="JENIS_USER" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="GRUP_USER" class="col-md-3 control-label"></label>
+            <div class="col-md-5">
+                <select asp-for="GRUP_USER" asp-items="ViewBag.ListGrupUser" class="form-control select2-jenis">
+                    @*<option disabled selected>-PILIH-</option>*@
+                </select>
+                <span asp-validation-for="JENIS_USER" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="KD_UNITKER" class="col-md-3 control-label"></label>
+            <div class="col-md-5">
+                <select asp-for="KD_UNITKER" asp-items="ViewBag.ListUnitKerja" class="form-control select2-kantor">
+                    @*<option disabled selected>- PILIH -</option>*@
+                </select>
+                <span asp-validation-for="KD_UNITKER" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="AKTIF" class="control-label col-md-3"></label>
+            <div class="col-md-3">
+                <div class="checkbox checkbox-success checkbox-circle">
+                    <input type="checkbox" asp-for="AKTIF" class="form-control" />
+                    <label for="AKTIF"></label>
+                    <span asp-validation-for="AKTIF" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+

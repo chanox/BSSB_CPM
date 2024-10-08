@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/RAS_Project.props" />
+</Project>

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/SRAK_Online.props" />
+</Project>

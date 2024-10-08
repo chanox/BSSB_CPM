@@ -1,0 +1,280 @@
+﻿
+<div class="small-header">
+    <div class="hpanel">
+        <div class="panel-body">
+            @*<div id="hbreadcrumb" class="pull-right">
+                    <ol class="hbreadcrumb breadcrumb">
+                        <li><a href="#">@ViewBag.Header</a></li>
+                        <li class="active">
+                            <span>@ViewBag.Title </span>
+                        </li>
+                    </ol>
+                </div>*@
+            <h2 class="font-light m-b-xs">
+                @ViewBag.Header
+            </h2>
+            <small>@ViewBag.Keterangan</small>
+        </div>
+    </div>
+</div>
+
+<div class="content transition animated fadeInUp">
+    @*- MAIN MENU -*@
+    <div class="row">
+        <div class="col-lg-12">
+            <!--<div class="hpanel">-->
+                @*<div class="panel-heading">
+                Daftar User
+            </div>*@
+                <!--<div class="panel-body">
+                    <div class="pull-right text-right">
+                        <button class="btn btn-primary" type="button" id="bTambahUser" data-toggle="tooltip" data-placement="top" title="Buat User Baru"><i class="fa fa-user-plus"></i></button>
+                    </div>
+
+                    <h3 class="m-b-xs">
+                        DAFTAR USER
+                    </h3>
+                    <p>Informasi kode & nama user / pengguna yang terdaftar.</p>
+
+                    <div class="hr-line-dashed"></div>
+
+                    <div class="table-responsive">
+                        <table id="dtDaftarUser" class="table table-striped table-bordered table-hover" cellpadding="0" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th class="text-center" hidden>Id</th>
+                                    <th class="text-center">No</th>
+                                    <th class="text-center">Username</th>
+                                    <th class="text-center">Nama Lengkap</th>
+                                    <th class="text-center">Jenis User</th>
+                                    <th class="text-center">Unit Kerja</th>
+                                    <th class="text-center">Aktif</th>
+                                    <th class="text-center">Opsi</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>-->
+
+            <div class="hpanel">
+                @*<div class="panel-heading hbuilt">
+                    <div class="panel-tools">
+                        <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                        <a class="closebox"><i class="fa fa-times"></i></a>
+                    </div>
+                    Panel with alert
+                </div>*@
+                @*<div class="panel-heading" style="height:50px">
+                    <div class="pull-right">
+                        <a class="btn btn-primary btn-sm" id="bTambahUser" data-toggle="tooltip" data-placement="top" title="Buat User Baru"><i class="fa fa-user-plus"></i> Buat User Baru</a>
+                    </div>
+                    
+                </div>*@
+                <div class="alert alert-success">
+                    @*<div class="pull-right">
+                        <a class="btn btn-primary btn-sm" id="bTambahUser" data-toggle="tooltip" data-placement="top" title="Buat User Baru"><i class="fa fa-user-plus"></i> Buat User Baru</a>
+                    </div>*@
+                    <h4 class="m-b-xs">DAFTAR TRANSAKSI RTGS</h4>
+                    <small><i class="fa fa-quote-right"></i> Rincian informasi seluruh transaksi RTGS</small>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table id="dtDaftarTransaksi" class="table table-striped table-bordered table-hover" cellpadding="0" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th class="text-center" hidden>Id</th>
+                                    <th class="text-center">No</th>
+                                    <th class="text-center">No. Trans</th>
+                                    <th class="text-center">Tanggal</th>
+                                    <th class="text-center">Nama Penerima</th>
+                                    <th class="text-center">Nama Bank</th>
+                                    <th class="text-center">Rek. Tujuan</th>
+                                    <th class="text-center">Nominal</th>
+                                    <th class="text-center">Biaya</th>
+                                    <th class="text-center">Keterangan</th>
+                                    <th class="text-center">Opsi</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <environment names="Staging,Production,Development">
+        <!-- Ladda -->
+        <link rel="stylesheet" href="~/lib/ladda/dist/ladda-themeless.min.css" />
+
+        <link rel="stylesheet" href="~/lib/sweetalert2/dist/sweetalert2.css" />
+        @*<link rel="stylesheet" href="~/lib/sweetalert/lib/sweetalert.css" />*@
+        <link rel="stylesheet" href="~/lib/toastr/lib/toastr.min.css" />
+        <link rel="stylesheet" href="~/lib/datatables.net-bs/css/dataTables.bootstrap.min.css" />
+
+        <link rel="stylesheet" href="~/lib/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" />
+
+        <link rel="stylesheet" href="~/lib/select2/select2.css" />
+        <link rel="stylesheet" href="~/lib/select2-bootstrap/select2-bootstrap.css" />
+    </environment>
+}
+
+@section Scripts {
+    <environment names="Staging,Production,Development">
+        <!-- Ladda -->
+        <script src="~/lib/ladda/dist/spin.min.js"></script>
+        <script src="~/lib/ladda/dist/ladda.min.js"></script>
+        <script src="~/lib/ladda/dist/ladda.jquery.min.js"></script>
+
+        <!-- TabAsEnter -->
+        <script src="~/lib_addon/JoelPurra/emulatetab.joelpurra.js"></script>
+        <script src="~/lib_addon/JoelPurra/plusastab.joelpurra.js"></script>
+
+        <script src="~/lib/sweetalert2/dist/sweetalert2.js"></script>
+        @*<script src="~/lib/sweetalert/lib/sweetalert.min.js"></script>*@
+        <script src="~/lib/toastr/lib/toastr.min.js"></script>
+
+        <script src="~/lib/bootbox/bootbox.js"></script>
+        <script src="~/lib/DataTables/media/js/jquery.dataTables.min.js"></script>
+        <script src="~/lib/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="~/lib/pdfmake/build/pdfmake.min.js"></script>
+        <script src="~/lib/pdfmake/build/vfs_fonts.js"></script>
+        <script src="~/lib/datatables.net-buttons/js/buttons.html5.min.js"></script>
+        <script src="~/lib/datatables.net-buttons/js/buttons.print.min.js"></script>
+        <script src="~/lib/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+        <script src="~/lib/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+
+        <script src="~/lib/select2/select2.min.js"></script>
+        <script src="~/lib/moment/moment.js"></script>
+    </environment>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(document).idleTimer(300000);
+
+            GetListUser();
+            ProfilePiture();
+        });
+
+        // -- TAB AS ENTER
+        JoelPurra.PlusAsTab.setOptions({
+            // Use enter instead of plus
+            // Number 13 found through demo at
+            // http://api.jquery.com/event.which/
+            key: 13
+        });
+        // -- END TAB AS ENTER
+
+        // Idle Time
+        $(document).on("idle.idleTimer", function (event, elem, obj) {
+            window.location = '@Url.Action("Login", "User")';
+        });
+
+        function sleep(milliseconds) {
+            var start = new Date().getTime();
+            for (var i = 0; i < 1e7; i++) {
+                if ((new Date().getTime() - start) > milliseconds) {
+                    break;
+                }
+            }
+        };
+
+        setInterval(function () { ReloadDaftar(); }, 25000);
+
+        // -- LOCK
+        history.pushState(null, null, document.URL);
+        window.addEventListener('popstate', function () {
+            history.pushState(null, null, document.URL);
+        });
+
+        $(document).on('focus', ':input', function () {
+            $(this).attr('autocomplete', 'off');
+        });
+
+        function ReloadUserList() {
+            $('#dtDaftarUser').DataTable().ajax.reload(null, false);
+        }
+
+        function GetListUser() {
+            $('#dtDaftarTransaksi').DataTable().destroy();
+            $('#dtDaftarTransaksi').DataTable({
+                ajax: {
+                    url: '@Url.Action("GelListRTGS", "Monitoring")',
+                    dataSrc: '[]',
+                    type: 'POST',
+                    data: { TOT_REC: 0 },
+                    async: true
+                    //error: function (xhr, error, code) {
+                    //    swal.fire('Kesalahan', 'Maaf, gagal mengambil data dari server', 'error')
+                    //}
+                },
+                columns: [
+                    { data: 'ID_BPDP_RTGS_TRANS', className: 'id hidden', render: function (data, type, row) { return data } },
+                    { data: null, className: 'text-center', width: '5%', render: function (data, type, row, meta) { return meta.row + 1; } },
+                    { data: 'NO_TRANS', className: 'text-center', width: '10%', render: function (data, type, row) { return data } },
+                    { data: 'TANGGAL', className: 'text-center', render: function (d) { return moment(d).format("DD/MM/YYYY") } },
+                    { data: 'NAMA_PENERIMA', width: '20%' },
+                    { data: 'BANK_PENERIMA', className: 'text-center', width: '10%' },
+                    { data: 'NOREK_PENERIMA', className: 'text-center', width: '10%' },
+                    { data: 'NOMINAL', className: 'text-right', width: '10%', render: $.fn.dataTable.render.number('.', ',', 2) },
+                    { data: 'BIAYA', className: 'text-right', width: '5%', render: $.fn.dataTable.render.number('.', ',', 2) },
+                    { data: 'KETERANGAN', className: 'text-center', width: '25%' },
+                    {
+                        data: null,
+                        className: 'text-center',
+                        width: '10%',
+                        defaultContent: '<button type="button" class="btn btn-xs btn-primary btn-outline btn-edit" data-toggle="tooltip" data-placement="top" title="Ubah"><i class="fa fa-pencil"></i></button> <button type="button" class="btn btn-xs btn-danger btn-outline btn-delete" data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fa fa-remove"></i></button>'
+                    }
+                ],
+                autoWidth: false,
+                oLanguage: { sSearch: 'Cari:' },
+                drawCallback: function (settings) {
+                    //if (!$('#dtDaftarUser').parent().hasClass("table-responsive")) {
+                    //    $('#dtDaftarUser').wrap("<div class='table-responsive'></div>");
+                    //}
+
+                    $('[data-toggle="tooltip"]').tooltip();
+                }
+            });
+        }
+
+        function ReloadDaftar() {
+            $('#dtDaftarTransaksi').DataTable().ajax.reload(null, false);
+        }
+
+        $('#dtDaftarUser').on('click', 'button.btn-edit', function (e) {
+            var id = $(this).closest("tr").find(".id").text();
+            GetEditUser(id);
+        });
+
+        $('#dtDaftarUser').on('click', 'button.btn-delete', function (e) {
+            var id = $(this).closest("tr").find(".id").text();
+            swal.fire({
+                title: 'Konfirmasi',
+                text: 'Data yang akan di hapus sudah benar?',
+                type: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Ya, Proses',
+                cancelButtonText: 'Tidak',
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                //reverseButtons: true,
+                showLoaderOnConfirm: true,
+                //customClass: {
+                //    confirmButton: 'btn btn-primary !important;',
+                //    cancelButton: 'btn btn-danger !important;',
+                //},
+                preConfirm: () => {
+                    return new Promise(function () {
+                        PostDeleteUser(id);
+                    });
+                },
+                allowOutsideClick: () => !swal.isLoading()
+            });
+        });
+    </script>
+
+}
+

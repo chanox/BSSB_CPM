@@ -1,0 +1,465 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = CPM_Project
+build_property.RootNamespace = CPM_Project
+build_property.ProjectDir = /Users/bangsat/RiderProjects/BSSB_CPM/CPM/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = /Users/bangsat/RiderProjects/BSSB_CPM/CPM
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/RAS/AkumulasiHome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = 
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUkFTL0FrdW11bGFzaUhvbWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/RAS/BungaSRAKHome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = 
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUkFTL0J1bmdhU1JBS0hvbWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/RAS/Master-Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = 
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUkFTL01hc3Rlci1EZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Analytics/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQW5hbHl0aWNzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/AppViews/AppPlans.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXBwVmlld3MvQXBwUGxhbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/AppViews/Blog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXBwVmlld3MvQmxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/AppViews/BlogArticle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXBwVmlld3MvQmxvZ0FydGljbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/AppViews/Calendar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXBwVmlld3MvQ2FsZW5kYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/AppViews/ChatView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXBwVmlld3MvQ2hhdFZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/AppViews/Contacts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXBwVmlld3MvQ29udGFjdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/AppViews/EmailCompose.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXBwVmlld3MvRW1haWxDb21wb3NlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/AppViews/EmailView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXBwVmlld3MvRW1haWxWaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/AppViews/Faq.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXBwVmlld3MvRmFxLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/AppViews/FileManager.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXBwVmlld3MvRmlsZU1hbmFnZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/AppViews/Forum.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXBwVmlld3MvRm9ydW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/AppViews/ForumDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXBwVmlld3MvRm9ydW1EZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/AppViews/Gallery.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXBwVmlld3MvR2FsbGVyeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/AppViews/Invoice.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXBwVmlld3MvSW52b2ljZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/AppViews/Mailbox.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXBwVmlld3MvTWFpbGJveC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/AppViews/Notes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXBwVmlld3MvTm90ZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/AppViews/ProfilePage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXBwVmlld3MvUHJvZmlsZVBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/AppViews/ProjectDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXBwVmlld3MvUHJvamVjdERldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/AppViews/Projects.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXBwVmlld3MvUHJvamVjdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/AppViews/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXBwVmlld3MvU2VhcmNoLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/AppViews/SocialBoard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXBwVmlld3MvU29jaWFsQm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/AppViews/Timeline.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXBwVmlld3MvVGltZWxpbmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/BoxTransitions/ColumnsCustom.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQm94VHJhbnNpdGlvbnMvQ29sdW1uc0N1c3RvbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/BoxTransitions/ColumnsFromUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQm94VHJhbnNpdGlvbnMvQ29sdW1uc0Zyb21VcC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/BoxTransitions/Overview.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQm94VHJhbnNpdGlvbnMvT3ZlcnZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/BoxTransitions/PanelsZoom.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQm94VHJhbnNpdGlvbnMvUGFuZWxzWm9vbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/BoxTransitions/RowsFromDown.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQm94VHJhbnNpdGlvbnMvUm93c0Zyb21Eb3duLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/BoxTransitions/RowsFromRight.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQm94VHJhbnNpdGlvbnMvUm93c0Zyb21SaWdodC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/BPDP/DaftarInHouse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQlBEUC9EYWZ0YXJJbkhvdXNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/BPDP/DaftarRTGS.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQlBEUC9EYWZ0YXJSVEdTLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/BPDP/DaftarSKN.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQlBEUC9EYWZ0YXJTS04uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Charts/C3Charts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2hhcnRzL0MzQ2hhcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Charts/Chartist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2hhcnRzL0NoYXJ0aXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Charts/ChartJs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2hhcnRzL0NoYXJ0SnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Charts/FlotCharts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2hhcnRzL0Zsb3RDaGFydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Charts/InlineGraphs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2hhcnRzL0lubGluZUdyYXBocy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/CommonViews/Error_One.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ29tbW9uVmlld3MvRXJyb3JfT25lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/CommonViews/Error_Two.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ29tbW9uVmlld3MvRXJyb3JfVHdvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/CommonViews/LockScreen.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ29tbW9uVmlld3MvTG9ja1NjcmVlbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/CommonViews/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ29tbW9uVmlld3MvTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/CommonViews/PasswordRecovery.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ29tbW9uVmlld3MvUGFzc3dvcmRSZWNvdmVyeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/CommonViews/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ29tbW9uVmlld3MvUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Customer/CustomerHome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ3VzdG9tZXIvQ3VzdG9tZXJIb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Customer/PengusulanHome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ3VzdG9tZXIvUGVuZ3VzdWxhbkhvbWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Customer/_ViewDataCustomer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ3VzdG9tZXIvX1ZpZXdEYXRhQ3VzdG9tZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Dashboard/DashboardBPDP.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGFzaGJvYXJkL0Rhc2hib2FyZEJQRFAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGFzaGJvYXJkL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Forms/FormsElements.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRm9ybXMvRm9ybXNFbGVtZW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Forms/FormsExtended.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRm9ybXMvRm9ybXNFeHRlbmRlZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Forms/TextEditor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRm9ybXMvVGV4dEVkaXRvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Forms/Validation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRm9ybXMvVmFsaWRhdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Forms/Wizard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRm9ybXMvV2l6YXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/GridSystem/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvR3JpZFN5c3RlbS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Interface/Alerts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW50ZXJmYWNlL0FsZXJ0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Interface/CodeEditor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW50ZXJmYWNlL0NvZGVFZGl0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Interface/ColorsButtons.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW50ZXJmYWNlL0NvbG9yc0J1dHRvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Interface/Components.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW50ZXJmYWNlL0NvbXBvbmVudHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Interface/DraggablePanels.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW50ZXJmYWNlL0RyYWdnYWJsZVBhbmVscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Interface/EmailTemplate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW50ZXJmYWNlL0VtYWlsVGVtcGxhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Interface/IconsLibrary.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW50ZXJmYWNlL0ljb25zTGlicmFyeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Interface/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW50ZXJmYWNlL0xpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Interface/LoadingButtons.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW50ZXJmYWNlL0xvYWRpbmdCdXR0b25zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Interface/Modals.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW50ZXJmYWNlL01vZGFscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Interface/PanelsDesign.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW50ZXJmYWNlL1BhbmVsc0Rlc2lnbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Interface/Tour.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW50ZXJmYWNlL1RvdXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Interface/Typography.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW50ZXJmYWNlL1R5cG9ncmFwaHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/LandingPage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGFuZGluZ1BhZ2UvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Monitoring/DaftarInHouse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTW9uaXRvcmluZy9EYWZ0YXJJbkhvdXNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Monitoring/DaftarRTGS.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTW9uaXRvcmluZy9EYWZ0YXJSVEdTLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Monitoring/DaftarSKN.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTW9uaXRvcmluZy9EYWZ0YXJTS04uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Monitoring/InfoSaldoHome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTW9uaXRvcmluZy9JbmZvU2FsZG9Ib21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Monitoring/RekeningKoranHome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTW9uaXRvcmluZy9SZWtlbmluZ0tvcmFuSG9tZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Options/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvT3B0aW9ucy9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/RAS/RASHome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUkFTL1JBU0hvbWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Shared/_Footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Gb290ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Shared/_Header.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19IZWFkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Shared/_Layout_Blank.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXRfQmxhbmsuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Shared/_Layout_Boxed.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXRfQm94ZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Shared/_Layout_Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXRfSG9tZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Shared/_Layout_Landing.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXRfTGFuZGluZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Shared/_Navigation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19OYXZpZ2F0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Shared/_Navigation_ORI.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19OYXZpZ2F0aW9uX09SSS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Shared/_Right_Sidebar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19SaWdodF9TaWRlYmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/SRAK/AkumulasiHome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU1JBSy9Ba3VtdWxhc2lIb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/SRAK/BungaSRAKHome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU1JBSy9CdW5nYVNSQUtIb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/SRAK/DataSRAKHome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU1JBSy9EYXRhU1JBS0hvbWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/SRAK/Master-Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU1JBSy9NYXN0ZXItRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Tables/DataTables.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGFibGVzL0RhdGFUYWJsZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Tables/FooTable.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGFibGVzL0Zvb1RhYmxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Tables/TablesDesign.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGFibGVzL1RhYmxlc0Rlc2lnbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/User/GantiPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9HYW50aVBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/User/GantiPasswordUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9HYW50aVBhc3N3b3JkVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/User/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9Mb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/User/Login_OK.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9Mb2dpbl9PSy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/User/UserHome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9Vc2VySG9tZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/User/_CreateUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9fQ3JlYXRlVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/User/_EditUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9fRWRpdFVzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/User/_MenuLoginUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9fTWVudUxvZ2luVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/User/_MenuLoginUser_X.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVXNlci9fTWVudUxvZ2luVXNlcl9YLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/Widgets/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvV2lkZ2V0cy9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/bangsat/RiderProjects/BSSB_CPM/CPM/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

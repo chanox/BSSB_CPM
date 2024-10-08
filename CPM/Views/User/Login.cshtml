@@ -1,0 +1,292 @@
+﻿@{ Layout = null; }
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CPM | @ViewBag.Title</title>
+    @* <link rel="icon" type="image/x-icon" href="~/favicon.ico"> *@
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <environment names="Development,Staging,Production">
+        <link rel="stylesheet" href="~/lib/bootstrap_login/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/style_v2.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/back_style.css" asp-append-version="true" />
+
+        <!-- Ladda style -->
+        <link rel="stylesheet" href="~/lib/ladda/dist/ladda-themeless.min.css">
+        @*<link rel="stylesheet" href="~/lib/sweetalert-bootsrap/sweetalert2.css">*@
+    </environment>
+
+</head>
+<body class="gray-bg light-skin">
+
+    <div class="animated fadeInDown">
+        @*loginColumns*@
+        @*<div class="row">
+            <div class="col-md-12 text-left">
+                <img id="LogoImage" src="~/BSSBLogo.png" />
+                <br />
+                <br />
+            </div>
+        </div>*@
+
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+        @*<ul class="bg-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>*@
+
+        <section class="vh-100">
+            <div class="container-fluid h-custom">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-xl-5 text-center">
+                        <img src="~/skin5.png"
+                             class="img-fluid" alt="Sample image">
+                    </div>
+                    @*class="offset-xl-1"*@
+                    <div id="divLogin" style="width:450px">
+                        <div id="LoginUser"></div>
+                    </div>
+
+                    @*<div class="col-md-6 col-lg-6 col-xl-5">
+                        <img src="~/skin3.png"
+                             class="img-fluid" alt="Sample image">
+                    </div>
+                    <div class="col-md-12 col-lg-12 col-xl-3 offset-xl-1">
+                        <div id="LoginUser"></div>
+                    </div>*@
+
+                    @*<div class="col-md-9 col-lg-6 col-xl-5">
+                        <img src="~/skin3.png"
+                             class="img-fluid" alt="Sample image">
+                    </div>
+                    <div class="col-md-8 col-lg-6 col-xl-3 offset-xl-1">
+                        <div id="LoginUser"></div>
+                    </div>*@
+                </div>
+            </div>
+            <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5">
+                <!-- Copyright -->
+                <div class="text-black mb-3 mb-md-0">
+                    <strong class="text-success">Bank Sulselbar</strong> © 2024-@DateTime.Now.Year
+                </div>
+                <!-- Copyright -->
+                <!-- Right -->
+                <div>
+                    @* <a href="#" class="text-black me-4"> *@
+                    @* $1$<i class="fab fa-facebook-f"></i>#1# *@
+                    @*     <img src="~/ojk_64.png"> *@
+                    @* </a> *@
+                    @*<a href="#!" class="text-black me-4">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#!" class="text-black me-4">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="#!" class="text-black">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>*@
+                </div>
+                <!-- Right -->
+            </div>
+        </section>
+
+
+
+        @*<div class="container-fluid h-custom">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-md-9 col-lg-6 col-xl-6">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                         class="img-fluid" alt="Sample image">
+                </div>
+                <div class="col-md-8 col-lg-6 col-xl-6 offset-xl-1">
+                    <form>
+
+                        <div id="LoginUser"></div>
+                    </form>
+                </div>
+            </div>
+        </div>*@
+
+        @*<div class="row">
+            <div class="col-md-6">
+                <small></small>
+            </div>
+            <div class="col-md-6 text-right">
+                <small>Bank Sulselbar © 2014-@DateTime.Now.Year</small>
+            </div>
+        </div>*@
+    </div>
+
+</body>
+
+</html>
+
+<style>
+    @*body {
+        background: url(/bck4.png);
+    }*@
+
+    body {
+        background: url(/bck4_v2.png);
+    }
+
+/*    body {
+        display: none
+    }*/
+
+    .divider:after,
+    .divider:before {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: #eee;
+    }
+    .h-custom {
+        height: calc(100% - 73px);
+    }
+    @@media (max-width: 450px) {
+        .h-custom {
+            height: 100%;
+        }
+    }
+
+    .swal2-popup {
+        font-size: 0.8rem !important;
+    }
+
+    .swal2-confirm {
+        background-color: #3085d6 !important;
+    }
+
+    .swal2-cancel {
+        background-color: #d33 !important;
+    }
+</style>
+
+<environment names="Staging,Production,Development">
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap_login/dist/js/bootstrap.js"></script>
+    <script src="~/lib/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="~/lib/slimScroll/jquery.slimscroll.min.js"></script>
+    @*<script src="~/js/script.js" asp-append-version="true"></script>*@
+
+
+    <!-- TabAsEnter -->
+    <script src="~/lib_addon/JoelPurra/emulatetab.joelpurra.js"></script>
+    <script src="~/lib_addon/JoelPurra/plusastab.joelpurra.js"></script>
+
+    <link rel="stylesheet" href="~/lib/sweetalert2/dist/sweetalert2.css" />
+    <link rel="stylesheet" href="~/lib/toastr/lib/toastr.min.css" />
+
+    <script src="~/lib/sweetalert2/dist/sweetalert2.js"></script>
+    <script src="~/lib/toastr/lib/toastr.min.js"></script>
+
+    @*<!-- Ladda -->
+        <script src="~/lib/ladda/dist/spin.min.js"></script>
+        <script src="~/lib/ladda/dist/ladda.min.js"></script>
+        <script src="~/lib/ladda/dist/ladda.jquery.min.js"></script>
+        <script src="~/lib/sweetalert/dist/sweetalert-dev.js"></script>-->
+        <script src="~/lib/sweetalert-bootsrap/sweetalert2.js"></script>
+
+        <script src="~/lib/bootbox/bootbox.all.js"></script>*@
+</environment>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        var width = $(window).width();
+        var height = $(window).height();
+
+        if ((width <= 1440) && (height <= 741)) {
+            $('#divLogin').addClass('offset-xl-1');
+        }
+        else {
+            $('#divLogin').removeClass('offset-xl-1');
+        }
+
+        ShowLogin();
+    });
+
+    // AUTOCOMPLETE OFF
+    $(document).on('focus', ':input', function () {
+        $(this).attr('autocomplete', 'off');
+    });
+
+    // LOCK
+    history.pushState(null, null, document.URL);
+    window.addEventListener('popstate', function () {
+        history.pushState(null, null, document.URL);
+    });
+
+    // Tab to Enter
+    JoelPurra.PlusAsTab.setOptions({
+        // Use enter instead of plus
+        // Number 13 found through demo at
+        // http://api.jquery.com/event.which/
+        key: 13
+    });
+
+    function ShowLogin() {
+        $.get('/Login', null, function (result) {
+            $('#LoginUser').html(result);
+        });
+    }
+
+    @*function ReloadAction() {
+        $('#bLogin').click(function () {
+            ValidasiLogin($('#USER_NAME').val(), $('#PASSWORD').val());
+
+            //swal({
+            //    title: 'Konfirmasi',
+            //    text: 'Apakah transaksi sudah benar?',
+            //    type: 'question',
+            //    CancelButton: true,
+            //    showCancelButton: true,
+            //    confirmButtonText: 'Ya',
+            //    cancelButtonText: 'Tidak',
+            //    cancelButtonColor: '#d33',
+            //    showLoaderOnConfirm: true,
+            //    preConfirm: (login) => {
+            //        return fetch(ValidasiLogin($('#USER_NAME').val(), $('#PASSWORD').val()));
+            //    },
+            //    allowOutsideClick: () => !swal.isLoading(),
+            //})
+        });
+    }*@
+
+</script>
+

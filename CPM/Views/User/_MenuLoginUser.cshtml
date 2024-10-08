@@ -1,0 +1,329 @@
+﻿@model CPM_Project.Models.LoginUser
+
+<div class="hpanel hchanox col-lg-12">
+    <div class="panel-body" data-plus-as-tab="true">
+        <form class="m-t" id="form-login" asp-antiforgery="true" data-plus-as-tab="true">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+            <div class="text-center text-lg-start mt-4 pt-2">
+                <img id="LogoImage" src="~/BSSBLogo.png" />
+            </div>
+
+            <div class="divider d-flex align-items-center my-2">
+                <h3 class="text-success text-center fw-bold mx-3 mb-0"><strong>Customer Portofolio Management</strong></h3>
+            </div>
+
+            @* <div class="text-center mb-3"> *@
+            @*     <h3 class="text-success text-center fw-bold mx-3 mb-0"><strong>(CPM)</strong></h3> *@
+            @* </div> *@
+
+            <div class="text-center mb-3">
+                <a class="text-black">Sign to account!</a>
+            </div>
+
+            <div class="form-group mb-4">
+                <input asp-for="USER_NAME" class="form-control" placeholder="Enter a valid username" />
+                <span asp-validation-for="USER_NAME" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-4">
+                <input asp-for="PASSWORD" type="password" class="form-control" placeholder="Enter password" />
+                <span asp-validation-for="PASSWORD" class="text-danger"></span>
+            </div>
+        </form>
+
+        <div class="text-center m-t">
+            <button id="bLogin" class="btn btn-sm btn-primary m-b ladda-button ldLogin" data-style="zoom-in" style="width:120px"> Login </button>
+            <p class="small">Gagal masuk pada aplikasi, harap hubungi <strong class="text-success">Bank Sulselbar</strong></p>
+        </div>
+    </div>
+</div>
+
+<style>
+    /*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+
+    .border-md {
+        border-width: 2px;
+    }
+
+    .btn-facebook {
+        background: #405D9D;
+        border: none;
+    }
+
+        .btn-facebook:hover, .btn-facebook:focus {
+            background: #314879;
+        }
+
+    .btn-twitter {
+        background: #42AEEC;
+        border: none;
+    }
+
+        .btn-twitter:hover, .btn-twitter:focus {
+            background: #1799e4;
+        }
+
+
+
+    /*
+*
+* ==========================================
+* FOR DEMO PURPOSES
+* ==========================================
+*
+*/
+
+    body {
+        min-height: 100vh;
+    }
+
+    .form-control:not(select) {
+        padding: 1.5rem 0.5rem;
+    }
+
+    select.form-control {
+        height: 52px;
+        padding-left: 0.5rem;
+    }
+
+    .form-control::placeholder {
+/*        color: #ccc;*/
+        /*        font-weight: bold;*/
+        color: grey;
+        font-size: 0.8rem;
+    }
+
+    .form-control:focus {
+        box-shadow: none;
+    }
+
+    .form-control {
+        font-size: 0.8rem;
+    }
+
+/*    .input.form-control {
+        border-color: red;
+    }*/
+
+</style>
+
+<environment names="Staging,Production,Development">
+    <!-- RSA Encrypted -->
+    <script src="~/lib_addon/JocysComJavascript/RSACrypt.js"></script>
+    <script src="~/lib_addon/JocysComJavascript/System.debug.js"></script>
+    <script src="~/lib_addon/JocysComJavascript/System.IO.debug.js"></script>
+    <script src="~/lib_addon/JocysComJavascript/System.Text.debug.js"></script>
+    <script src="~/lib_addon/JocysComJavascript/System.Convert.debug.js"></script>
+    <script src="~/lib_addon/JocysComJavascript/System.BitConverter.debug.js"></script>
+    <script src="~/lib_addon/JocysComJavascript/System.BigInt.debug.js"></script>
+    <script src="~/lib_addon/JocysComJavascript/System.Security.Cryptography.debug.js"></script>
+    <script src="~/lib_addon/JocysComJavascript/System.Security.Cryptography.SHA1.debug.js"></script>
+    <script src="~/lib_addon/JocysComJavascript/System.Security.Cryptography.RSA.debug.js"></script>
+
+    <script src="~/lib_addon/image-profile.js"></script>
+
+    @*<script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/lib/metisMenu/dist/metisMenu.js"></script>
+        <script src="~/lib/slimScroll/jquery.slimscroll.min.js"></script>*@
+
+    <!-- Ladda -->
+    <link rel="stylesheet" href="~/lib/ladda/dist/ladda-themeless.min.css" />
+    <script src="~/lib/ladda/dist/spin.min.js"></script>
+    <script src="~/lib/ladda/dist/ladda.min.js"></script>
+    <script src="~/lib/ladda/dist/ladda.jquery.min.js"></script>
+    @*<script src="~/lib/sweetalert/dist/sweetalert-dev.js"></script>*@
+
+    <!-- TabAsEnter -->
+    <script src="~/lib_addon/JoelPurra/emulatetab.joelpurra.js"></script>
+    <script src="~/lib_addon/JoelPurra/plusastab.joelpurra.js"></script>
+
+
+    @*<link rel="stylesheet" href="~/lib/sweetalert2/dist/sweetalert2.css" />
+        <link rel="stylesheet" href="~/lib/toastr/lib/toastr.min.css" />
+
+        <script src="~/lib/sweetalert2/dist/sweetalert2.js"></script>
+        <script src="~/lib/toastr/lib/toastr.min.js"></script>*@
+
+    <script src="~/lib/bootbox/bootbox.js"></script>
+
+    <link rel="stylesheet" href="~/lib/fontawesome/css/font-awesome.css" />
+</environment>
+
+<script type="text/javascript">
+
+    //$(function () {
+    //    $('input, select').on('focus', function () {
+    //        $(this).parent().find('.form-control').css('border-color', '#80bdff');
+    //    });
+
+    //    $('input, select').on('blur', function () {
+    //        $(this).parent().find('.form-control').css('border-color', '#ced4da');
+    //    });
+    //});
+
+    $('#USER_NAME').focus();
+
+    $('#bLogin').click(function () {
+        ValidasiLogin($('#USER_NAME').val(), $('#PASSWORD').val());
+
+        @*swal({
+            title: 'Konfirmasi',
+            text: 'Apakah transaksi sudah benar?',
+            type: 'question',
+            CancelButton: true,
+            showCancelButton: true,
+            confirmButtonText: 'Ya',
+            cancelButtonText: 'Tidak',
+            cancelButtonColor: '#d33',
+            showLoaderOnConfirm: true,
+            preConfirm: (login) => {
+                return fetch(ValidasiLogin($('#USER_NAME').val(), $('#PASSWORD').val()));
+            },
+            allowOutsideClick: () => !swal.isLoading(),
+        })*@
+    });
+
+    function ValidasiLogin(USER_NAME, PASS) {
+        var l = $('.ldLogin').ladda();
+
+        l.ladda('start');
+        $.get('/User/KeyGenerator', null, function (result) {
+
+            var xData = {};
+            xData.__RequestVerificationToken = $('[name=__RequestVerificationToken]').val();
+            @*xData.CaptchaInputText = $('#CaptchaInputText').val();
+            xData.CaptchaDeText = $('#CaptchaDeText').val();*@
+
+            xData.CryptUSER_NAME = RSAEncrypt($('#USER_NAME').val(), result);
+            xData.CryptPASSWORD = RSAEncrypt($('#PASSWORD').val(), result);
+
+            $.post('/User/ValidasiLogin', xData, function (result) {
+                if (result.substring(0, 1) == '/') {
+                    @*l.ladda('stop');*@
+                    window.location.href = result;
+                    return;
+                }
+                else if (result == '7') {
+                    @*l.ladda('stop');*@
+                    window.location.href = '/User/GantiPassword';
+                    return;
+                }
+                else {
+                    l.ladda('stop');
+
+                    @*$('#LoginUser').html(result);*@
+                    //$('#USER_NAME').focus();
+
+                    ShowMessage(result);
+
+                    @*ReloadAction();*@
+                    return;
+                }
+            });
+        });
+    }
+
+    function ShowMessage(kode) {
+        if (kode == '9') {
+            Swal.fire('Kesalahan', 'Maaf, username atau password tidak sesuai...', 'error')
+                .then(() => { $('#USER_NAME').focus(); });
+
+            //bootbox.alert({
+            //    //title: 'Kesalahan',
+            //    message: 'Maaf, username atau password tidak sesuai...',
+            //    className: 'shake animated',
+            //    //onEscape: true,
+            //    backdrop: true,
+            //    centerVertical: true,
+            //    callback: function () {
+            //        setTimeout(function () {
+            //            $('#USER_NAME').focus();
+            //        }, 10);
+            //    }
+            //});
+
+            //bootbox.dialog({
+            //    title: "<span style='color: red;'>Kesalahan</span>",
+            //    message: "Maaf, username atau password tidak sesuai...",
+            //    className: "shake animated",
+            //    closeButton: false,
+            //    backdrop: true,
+            //    centerVertical: true,
+            //    buttons: {
+            //        OK: {
+            //            label: "OK",
+            //            className: "btn-primary",
+            //            callback: function () {
+            //                setTimeout(function () {
+            //                    $("#USER_NAME").focus();
+            //                }, 10);
+            //            }
+            //        }
+            //    }
+            //});
+        }
+        else if (kode == '8') {
+            swal.fire('Kesalahan', 'Maaf, username tidak aktif atau terblokir. Harap hubungi administrator...', 'error')
+                .then(() => { $('#USER_NAME').focus(); });
+
+            //bootbox.alert({
+            //    //title: 'Kesalahan',
+            //    message: 'Maaf, username tidak aktif atau terblokir. Harap hubungi administrator...',
+            //    className: 'shake animated',
+            //    //onEscape: true,
+            //    backdrop: true,
+            //    centerVertical: true,
+            //    callback: function () {
+            //        setTimeout(function () {
+            //            $('#USER_NAME').focus();
+            //        }, 10);
+            //    }
+            //});
+        }
+        else if (kode == '6') {
+            swal.fire('Kesalahan', 'Maaf, username anda terblokir. Harap coba 5 menit lagi...', 'error')
+                .then(() => { $('#USER_NAME').focus(); });
+
+            //bootbox.alert({
+            //    //title: 'Kesalahan',
+            //    message: 'Maaf, username anda terblokir, harap coba 5 menit lagi...',
+            //    className: 'shake animated',
+            //    //onEscape: true,
+            //    backdrop: true,
+            //    centerVertical: true,
+            //    callback: function () {
+            //        setTimeout(function () {
+            //            $('#USER_NAME').focus();
+            //        }, 10);
+            //    }
+            //});
+        }
+        else if (kode == '10') {
+            swal.fire('Kesalahan', 'Maaf, kode yang dimasukan salah...', 'error')
+                .then(() => { $('#USER_NAME').focus(); });
+
+            //bootbox.alert({
+            //    //title: 'Kesalahan',
+            //    message: 'Maaf, kode yang dimasukan salah...',
+            //    className: 'shake animated',
+            //    //onEscape: true,
+            //    backdrop: true,
+            //    centerVertical: true,
+            //    callback: function () {
+            //        setTimeout(function () {
+            //            $('#USER_NAME').focus();
+            //        }, 10);
+            //    }
+            //});
+        }
+    }
+
+</script>

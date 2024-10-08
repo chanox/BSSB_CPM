@@ -1,0 +1,957 @@
+@{
+    Layout = "_Layout_Home";
+}
+
+<div class="small-header">
+    <div class="hpanel">
+        <div class="panel-body">
+            <div id="hbreadcrumb" class="pull-right">
+                    @* <ol class="hbreadcrumb breadcrumb"> *@
+                    @*     <li><a href="#">@ViewBag.Header</a></li> *@
+                    @*     <li class="active"> *@
+                    @*         <span>@ViewBag.Title </span> *@
+                    @*     </li> *@
+                    @* </ol> *@
+                <ol class="hbreadcrumb breadcrumb">
+                    <li><a>Risk Appetite Statement (RAS)</a></li>
+                </ol>
+                   
+                </div>
+            <h2 class="font-light m-b-xs">
+                @ViewBag.Header
+            </h2>
+            <small>@ViewBag.Keterangan</small>
+        </div>
+    </div>
+</div>
+
+<div class="content transition animated fadeIn">
+    @* <div class="row"> *@
+    @*     <div class="col-lg-8"> *@
+    @*         <div class="hpanel"> *@
+    @*             <div class="panel-heading hbuilt"> *@
+    @*                 $1$ <h3 class="m-b-xs">FILTER</h3> #1# *@
+    @*                 <i class="fa fa-quote-right"></i> Menampilkan data sesuai pilihan tanggal & cabang *@
+    @*             </div> *@
+    @*              *@
+    @*             <div class="panel-body"> *@
+    @*                 $1$ <p><i class="fa fa-quote-right"></i> Menampilkan data sesuai pilihan tanggal & cabang</p> #1# *@
+    @*                 $1$ <br/> #1# *@
+    @*                 <div class="row"> *@
+    @*                     <form class="form-horizontal"> *@
+    @*                         <div class="col-md-12"> *@
+    @*                             <div class="col-md-4"> *@
+    @*                                 <div class="form-group"> *@
+    @*                                     $1$ <label class="control-label col-md-4">Tanggal</label> #1# *@
+    @*                                     <div class="input-group date col-md-11"> *@
+    @*                                         <span class="input-group-addon">&nbsp;Tanggal&nbsp;&nbsp;&nbsp;&nbsp;</span> *@
+    @*                                         <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span> *@
+    @*                                         <input type="text" id="tglData" class="form-control"> *@
+    @*                                     </div> *@
+    @*                                 </div> *@
+    @*                             </div> *@
+    @*                             <div class="input-group col-md-8"> *@
+    @*                                 <span class="input-group-addon">Cabang&nbsp;&nbsp;</span> *@
+    @*                                 <select id="kdCabang" asp-items="ViewBag.ListCabang" class="form-control select2-cabang"> *@
+    @*                                     <option selected>Semua Cabang</option> *@
+    @*                                 </select> *@
+    @*                                 <span class="input-group-btn"> *@
+    @*                                     <button type="button" id="breGenerate" class="btn btn-danger btn-outline"><i class="fa fa-gears"></i> Re-Generate Data</button> *@
+    @*                                 </span> *@
+    @*                             </div> *@
+    @*                         </div> *@
+    @*                     </form> *@
+    @*                 </div> *@
+    @*             </div> *@
+    @*         </div> *@
+    @*     </div> *@
+    @* </div> *@
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="hpanel">
+
+                <div class="panel-heading">
+                    @* <div class="pull-right"> *@
+                    @*     <a class="btn btn-success" id="bTambahUser" data-toggle="tooltip" data-placement="top" title="Tamplikan Lengkap" href="@Url.Action("DaftarInHouse", "BPDP")"><i class="fa fa-th-list"></i></a> *@
+                    @* </div> *@
+                    <h3 class="m-b-xs text-primary-2">RISIKO KREDIT</h3>
+                    <i class="fa fa-quote-right"></i> Menampilkan Perhitungan Risiko Kredit
+                </div>
+                <div class="panel-body">
+                    <table id="dtKredit" class="table table-striped table-bordered table-hover" cellpadding="0" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th rowspan="2" class="text-center">No</th>
+                                <th rowspan="2" class="text-center">RISK METRIC</th>
+                                <th colspan="2" class="text-center">RISK APPETITE</th>
+                                <th colspan="2" class="text-center">RISK TOLERANCE</th>
+                                <th rowspan="2" class="text-center">JAN</th>
+                                <th rowspan="2" class="text-center">FEB</th>
+                                <th rowspan="2" class="text-center">MAR</th>
+                                <th rowspan="2" class="text-center">APR</th>
+                                <th rowspan="2" class="text-center">MEI</th>
+                                <th rowspan="2" class="text-center">JUN</th>
+                                <th rowspan="2" class="text-center">JUL</th>
+                                <th rowspan="2" class="text-center">AGS</th>
+                                <th rowspan="2" class="text-center">SEP</th>
+                                <th rowspan="2" class="text-center">OKT</th>
+                                <th rowspan="2" class="text-center">NOV</th>
+                                <th rowspan="2" class="text-center">DES</th>
+                            </tr>
+                            <tr>
+                                <th class="text-center">&nbsp;</th>
+                                <th class="text-center">&nbsp;</th>
+                                <th class="text-center">&nbsp;</th>
+                                <th class="text-center">&nbsp;</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="hpanel">
+    
+                <div class="panel-heading">
+                    @* <div class="pull-right"> *@
+                    @*     <a class="btn btn-info" id="bTambahUser" data-toggle="tooltip" data-placement="top" title="Tamplikan Lengkap" href="@Url.Action("DaftarInHouse", "BPDP")"><i class="fa fa-th-list"></i></a> *@
+                    @* </div> *@
+                    <h3 class="m-b-xs text-warning">PASAR</h3>
+                    <i class="fa fa-quote-right"></i> Menampilkan Perhitungan Risiko Pasar
+                </div>
+                <div class="panel-body">
+                    <table id="dtPasar" class="table table-striped table-bordered table-hover" cellpadding="0" style="width:100%">
+                        <thead>
+                        <tr>
+                            <th rowspan="2" class="text-center">No</th>
+                            <th rowspan="2" class="text-center">RISK METRIC</th>
+                            <th colspan="2" class="text-center">RISK APPETITE</th>
+                            <th colspan="2" class="text-center">RISK TOLERANCE</th>
+                            <th rowspan="2" class="text-center">JAN</th>
+                            <th rowspan="2" class="text-center">FEB</th>
+                            <th rowspan="2" class="text-center">MAR</th>
+                            <th rowspan="2" class="text-center">APR</th>
+                            <th rowspan="2" class="text-center">MEI</th>
+                            <th rowspan="2" class="text-center">JUN</th>
+                            <th rowspan="2" class="text-center">JUL</th>
+                            <th rowspan="2" class="text-center">AGS</th>
+                            <th rowspan="2" class="text-center">SEP</th>
+                            <th rowspan="2" class="text-center">OKT</th>
+                            <th rowspan="2" class="text-center">NOV</th>
+                            <th rowspan="2" class="text-center">DES</th>
+                        </tr>
+                        <tr>
+                            <th class="text-center">&nbsp;</th>
+                            <th class="text-center">&nbsp;</th>
+                            <th class="text-center">&nbsp;</th>
+                            <th class="text-center">&nbsp;</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="hpanel">
+    
+                <div class="panel-heading">
+                    @* <div class="pull-right"> *@
+                    @*     <a class="btn btn-danger" id="bTambahUser" data-toggle="tooltip" data-placement="top" title="Tamplikan Lengkap" href="@Url.Action("DaftarInHouse", "BPDP")"><i class="fa fa-th-list"></i></a> *@
+                    @* </div> *@
+                    <h3 class="m-b-xs text-info">LIKUIDITAS</h3>
+                    <i class="fa fa-quote-right"></i> Menampilkan Perhitungan Risiko Likuiditas
+                </div>
+                <div class="panel-body">
+                    <table id="dtLikuiditas" class="table table-striped table-bordered table-hover" cellpadding="0" style="width:100%">
+                        <thead>
+                        <tr>
+                            <th rowspan="2" class="text-center">No</th>
+                            <th rowspan="2" class="text-center">RISK METRIC</th>
+                            <th colspan="2" class="text-center">RISK APPETITE</th>
+                            <th colspan="2" class="text-center">RISK TOLERANCE</th>
+                            <th rowspan="2" class="text-center">JAN</th>
+                            <th rowspan="2" class="text-center">FEB</th>
+                            <th rowspan="2" class="text-center">MAR</th>
+                            <th rowspan="2" class="text-center">APR</th>
+                            <th rowspan="2" class="text-center">MEI</th>
+                            <th rowspan="2" class="text-center">JUN</th>
+                            <th rowspan="2" class="text-center">JUL</th>
+                            <th rowspan="2" class="text-center">AGS</th>
+                            <th rowspan="2" class="text-center">SEP</th>
+                            <th rowspan="2" class="text-center">OKT</th>
+                            <th rowspan="2" class="text-center">NOV</th>
+                            <th rowspan="2" class="text-center">DES</th>
+                        </tr>
+                        <tr>
+                            <th class="text-center">&nbsp;</th>
+                            <th class="text-center">&nbsp;</th>
+                            <th class="text-center">&nbsp;</th>
+                            <th class="text-center">&nbsp;</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="hpanel">
+    
+                <div class="panel-heading">
+                    @* <div class="pull-right"> *@
+                    @*     <a class="btn btn-warning" id="bTambahUser" data-toggle="tooltip" data-placement="top" title="Tamplikan Lengkap" href="@Url.Action("DaftarInHouse", "BPDP")"><i class="fa fa-th-list"></i></a> *@
+                    @* </div> *@
+                    <h3 class="m-b-xs text-danger">OPERASIONAL</h3>
+                    <i class="fa fa-quote-right"></i> Menampilkan Perhitungan Risiko Operasional
+                </div>
+                <div class="panel-body">
+                    <table id="dtOperasional" class="table table-striped table-bordered table-hover" cellpadding="0" style="width:100%">
+                        <thead>
+                        <tr>
+                            <th rowspan="2" class="text-center">No</th>
+                            <th rowspan="2" class="text-center">RISK METRIC</th>
+                            <th colspan="2" class="text-center">RISK APPETITE</th>
+                            <th colspan="2" class="text-center">RISK TOLERANCE</th>
+                            <th rowspan="2" class="text-center">JAN</th>
+                            <th rowspan="2" class="text-center">FEB</th>
+                            <th rowspan="2" class="text-center">MAR</th>
+                            <th rowspan="2" class="text-center">APR</th>
+                            <th rowspan="2" class="text-center">MEI</th>
+                            <th rowspan="2" class="text-center">JUN</th>
+                            <th rowspan="2" class="text-center">JUL</th>
+                            <th rowspan="2" class="text-center">AGS</th>
+                            <th rowspan="2" class="text-center">SEP</th>
+                            <th rowspan="2" class="text-center">OKT</th>
+                            <th rowspan="2" class="text-center">NOV</th>
+                            <th rowspan="2" class="text-center">DES</th>
+                        </tr>
+                        <tr>
+                            <th class="text-center">&nbsp;</th>
+                            <th class="text-center">&nbsp;</th>
+                            <th class="text-center">&nbsp;</th>
+                            <th class="text-center">&nbsp;</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section Styles {
+    <environment names="Staging,Production,Development">
+        <link rel="stylesheet" href="~/lib/toastr/lib/toastr.min.css" />
+        <link rel="stylesheet" href="~/lib/datatables/media/css/dataTables.bootstrap.min.css" />
+        <link rel="stylesheet" href="~/lib/datatables/media/css/responsive.dataTables.min.css" />
+        <link rel="stylesheet" href="~/lib/datatables.net-bs/css/dataTables.bootstrap.min.css" />
+        <link rel="stylesheet" href="~/lib/select2/select2.css" />
+        <link rel="stylesheet" href="~/lib/select2-bootstrap/select2-bootstrap.css" />
+        <link rel="stylesheet" href="~/lib/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css" />
+        <link rel="stylesheet" href="~/lib/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+        <link rel="stylesheet" href="~/lib/clockpicker/dist/bootstrap-clockpicker.min.css" />
+        <link rel="stylesheet" href="~/lib/datatables/media/css/fixedColumns.bootstrap.min.css" />
+    </environment>
+}
+
+@section Scripts {
+    <environment names="Development,Staging,Production">
+        <script src="~/lib/datatables/media/js/jquery.dataTables.min.js"></script>
+        <script src="~/lib/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="~/lib/datatables/media/js/dataTables.responsive.min.js"></script>
+        <script src="~/lib/datatables/media/js/dataTables.fixedColumns.min.js"></script>
+        <script src="~/lib/pdfmake/build/pdfmake.min.js"></script>
+        <script src="~/lib/pdfmake/build/vfs_fonts.js"></script>
+        <script src="~/lib/datatables.net-buttons/js/buttons.html5.min.js"></script>
+        <script src="~/lib/datatables.net-buttons/js/buttons.print.min.js"></script>
+        <script src="~/lib/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+        <script src="~/lib/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="~/lib/select2/select2.min.js"></script>
+        <script src="~/lib/moment/moment.js"></script>
+        <script src="~/lib/idle-timer/idle-timer.min.js"></script>
+        <script src="~/lib/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+        <script src="~/lib/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+        <script src="~/lib/clockpicker/dist/bootstrap-clockpicker.min.js"></script>
+        <script src="~/lib/datatables/media/js/dataTables.fixedColumns.min.js"></script>
+    </environment>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $(document).idleTimer(300000);
+
+            ProfilePiture();
+            
+            $('#tglData').val('@DateTime.Now.ToString("yyyy-MM-dd")');
+            $('#tglData').datepicker({ format: 'yyyy-mm-dd' });
+            
+            GetKredit();
+            GetPasar();
+            GetLikuiditas();
+            GetOperasional();
+            
+            //GetDeposito();
+            //GetGiro();
+            //GetPinjaman();
+        });
+
+        // Idle Time
+        $(document).on("idle.idleTimer", function (event, elem, obj) {
+            window.location = '@Url.Action("Login", "User")';
+        });
+
+        function sleep(milliseconds) {
+            var start = new Date().getTime();
+            for (var i = 0; i < 1e7; i++) {
+                if ((new Date().getTime() - start) > milliseconds) {
+                    break;
+                }
+            }
+        };
+
+        setInterval(function () { ReloadDaftar(); }, 25000);
+        
+        $('.select2-cabang').select2();
+
+        function formatMoney(amount, decimalCount = 2, decimal = ",", thousands = ".") {
+            try {
+                decimalCount = Math.abs(decimalCount);
+                decimalCount = isNaN(decimalCount) ? 2 : decimalCount;
+
+                const negativeSign = amount < 0 ? "-" : "";
+
+                let i = parseInt(amount = Math.abs(Number(amount) || 0).toFixed(decimalCount)).toString();
+                let j = (i.length > 3) ? i.length % 3 : 0;
+
+                return negativeSign +
+                    (j ? i.substr(0, j) + thousands : '') +
+                    i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousands) +
+                    (decimalCount ? decimal + Math.abs(amount - i).toFixed(decimalCount).slice(2) : "");
+            } catch (e) {
+                console.log(e)
+            }
+        };
+
+        function GetKredit() {
+            $('#dtKredit').DataTable().destroy();
+            $('#dtKredit').DataTable({
+                ajax: {
+                    url: '@Url.Action("GetDataRAS", "RAS")',
+                    dataSrc: '[]',
+                    type: 'GET',
+                    data: { TAHUN: 2023, JENIS: 'KREDIT' }
+                    //async: true
+                    // error: function (xhr, error, code) {
+                    //    swal.fire('Kesalahan', 'Maaf, gagal mengambil data dari server', 'error')
+                    // }
+                },
+                columns: [
+                    { data: null, className: 'text-center', width: '5%', render: function (data, type, row, meta) { return meta.row + 1; } },
+                    //{ data: 'TGL_DATA', className: 'text-center', render: function (d) { return moment(d).format("DD/MM/YYYY") } },
+                    { data: 'RISK_METRIC', width: '50%', className: 'text-left', render: function (data, type, row) { return data } },
+                    { data: 'RISK_APP_1', className: 'text-center', render: function (data, type, row) { return data } },
+                    { data: 'RISK_APP_2', className: 'text-center', render: function (data, type, row) { return data } },
+                    { data: 'RISK_TOL_1', className: 'text-center', render: function (data, type, row) { return data } },
+                    { data: 'RISK_TOL_2', className: 'text-center', render: function (data, type, row) { return data } },
+                    { data: 'M01', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M02', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M03', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M04', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M05', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M06', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M07', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M08', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M09', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M10', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M11', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M12', className: 'text-center', render: function (data, type, row) { return data + '%'} }
+                ],
+                //fixedColumns: {
+                //    left: 6,
+                //    right: 1
+                //},
+                //processing: true,
+                //serverSide: true,
+                autoWidth: false,
+                oLanguage: { sSearch: 'Cari:' },
+                dom: "<'row'<'col-sm-4'l><'col-sm-4 text-center'B><'col-sm-4'f>>tp",
+                buttons: [
+                    { extend: 'copy', className: 'btn-sm' },
+                    { extend: 'csv', title: 'Hasil Perhitungan SRAK', className: 'btn-sm' },
+                    {
+                        extend: 'pdf',
+                        title: 'Hasil Perhitungan SRAK',
+                        orientation: 'landscape',
+                        pageSize: 'LEGAL',
+                        className: 'btn-sm',
+                    }
+                ],
+                aLengthMenu: [
+                    [10, 25, 50, 100, 200, -1],
+                    [10, 25, 50, 100, 200, "All"]
+                ],
+                iDisplayLength: 0,
+                drawCallback: function (settings) {
+                    //if (!$('#dtTabungan').parent().hasClass("table-responsive")) {
+                    //   $('#dtTabungan').wrap("<div class='table-responsive'></div>");
+                    //}
+
+                    $('#dtKredit').wrap("<div class='table-responsive'></div>");
+                    $('[data-toggle="tooltip"]').tooltip();
+                }
+            });
+        }
+
+        function GetPasar() {
+            $('#dtPasar').DataTable().destroy();
+            $('#dtPasar').DataTable({
+                ajax: {
+                    url: '@Url.Action("GetDataRAS", "RAS")',
+                    dataSrc: '[]',
+                    type: 'GET',
+                    data: { TAHUN: 2023, JENIS: 'PASAR' }
+                    //async: true
+                    // error: function (xhr, error, code) {
+                    //    swal.fire('Kesalahan', 'Maaf, gagal mengambil data dari server', 'error')
+                    // }
+                },
+                columns: [
+                    { data: null, className: 'text-center', width: '5%', render: function (data, type, row, meta) { return meta.row + 1; } },
+                    //{ data: 'TGL_DATA', className: 'text-center', render: function (d) { return moment(d).format("DD/MM/YYYY") } },
+                    { data: 'RISK_METRIC', width: '50%', className: 'text-left', render: function (data, type, row) { return data } },
+                    { data: 'RISK_APP_1', className: 'text-center', render: function (data, type, row) { return data } },
+                    { data: 'RISK_APP_2', className: 'text-center', render: function (data, type, row) { return data } },
+                    { data: 'RISK_TOL_1', className: 'text-center', render: function (data, type, row) { return data } },
+                    { data: 'RISK_TOL_2', className: 'text-center', render: function (data, type, row) { return data } },
+                    { data: 'M01', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M02', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M03', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M04', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M05', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M06', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M07', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M08', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M09', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M10', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M11', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M12', className: 'text-center', render: function (data, type, row) { return data + '%'} }
+                ],
+                //fixedColumns: {
+                //    left: 6,
+                //    right: 1
+                //},
+                //processing: true,
+                //serverSide: true,
+                autoWidth: false,
+                oLanguage: { sSearch: 'Cari:' },
+                dom: "<'row'<'col-sm-4'l><'col-sm-4 text-center'B><'col-sm-4'f>>tp",
+                buttons: [
+                    { extend: 'copy', className: 'btn-sm' },
+                    { extend: 'csv', title: 'Hasil Perhitungan SRAK', className: 'btn-sm' },
+                    {
+                        extend: 'pdf',
+                        title: 'Hasil Perhitungan SRAK',
+                        orientation: 'landscape',
+                        pageSize: 'LEGAL',
+                        className: 'btn-sm',
+                    }
+                ],
+                aLengthMenu: [
+                    [10, 25, 50, 100, 200, -1],
+                    [10, 25, 50, 100, 200, "All"]
+                ],
+                iDisplayLength: 0,
+                drawCallback: function (settings) {
+                    //if (!$('#dtTabungan').parent().hasClass("table-responsive")) {
+                    //   $('#dtTabungan').wrap("<div class='table-responsive'></div>");
+                    //}
+
+                    $('#dtPasar').wrap("<div class='table-responsive'></div>");
+                    $('[data-toggle="tooltip"]').tooltip();
+                }
+            });
+        }
+
+        function GetLikuiditas() {
+            $('#dtLikuiditas').DataTable().destroy();
+            $('#dtLikuiditas').DataTable({
+                ajax: {
+                    url: '@Url.Action("GetDataRAS", "RAS")',
+                    dataSrc: '[]',
+                    type: 'GET',
+                    data: { TAHUN: 2023, JENIS: 'LIKUIDITAS' }
+                    //async: true
+                    // error: function (xhr, error, code) {
+                    //    swal.fire('Kesalahan', 'Maaf, gagal mengambil data dari server', 'error')
+                    // }
+                },
+                columns: [
+                    { data: null, className: 'text-center', width: '5%', render: function (data, type, row, meta) { return meta.row + 1; } },
+                    //{ data: 'TGL_DATA', className: 'text-center', render: function (d) { return moment(d).format("DD/MM/YYYY") } },
+                    { data: 'RISK_METRIC', width: '50%', className: 'text-left', render: function (data, type, row) { return data } },
+                    { data: 'RISK_APP_1', className: 'text-center', render: function (data, type, row) { return data } },
+                    { data: 'RISK_APP_2', className: 'text-center', render: function (data, type, row) { return data } },
+                    { data: 'RISK_TOL_1', className: 'text-center', render: function (data, type, row) { return data } },
+                    { data: 'RISK_TOL_2', className: 'text-center', render: function (data, type, row) { return data } },
+                    { data: 'M01', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M02', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M03', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M04', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M05', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M06', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M07', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M08', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M09', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M10', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M11', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M12', className: 'text-center', render: function (data, type, row) { return data + '%'} }
+                ],
+                //fixedColumns: {
+                //    left: 6,
+                //    right: 1
+                //},
+                //processing: true,
+                //serverSide: true,
+                autoWidth: false,
+                oLanguage: { sSearch: 'Cari:' },
+                dom: "<'row'<'col-sm-4'l><'col-sm-4 text-center'B><'col-sm-4'f>>tp",
+                buttons: [
+                    { extend: 'copy', className: 'btn-sm' },
+                    { extend: 'csv', title: 'Hasil Perhitungan SRAK', className: 'btn-sm' },
+                    {
+                        extend: 'pdf',
+                        title: 'Hasil Perhitungan SRAK',
+                        orientation: 'landscape',
+                        pageSize: 'LEGAL',
+                        className: 'btn-sm',
+                    }
+                ],
+                aLengthMenu: [
+                    [10, 25, 50, 100, 200, -1],
+                    [10, 25, 50, 100, 200, "All"]
+                ],
+                iDisplayLength: 0,
+                drawCallback: function (settings) {
+                    //if (!$('#dtTabungan').parent().hasClass("table-responsive")) {
+                    //   $('#dtTabungan').wrap("<div class='table-responsive'></div>");
+                    //}
+
+                    $('#dtLikuiditas').wrap("<div class='table-responsive'></div>");
+                    $('[data-toggle="tooltip"]').tooltip();
+                }
+            });
+        }
+
+        function GetOperasional() {
+            $('#dtOperasional').DataTable().destroy();
+            $('#dtOperasional').DataTable({
+                ajax: {
+                    url: '@Url.Action("GetDataRAS", "RAS")',
+                    dataSrc: '[]',
+                    type: 'GET',
+                    data: { TAHUN: 2023, JENIS: 'OPERASIONAL' }
+                    //async: true
+                    // error: function (xhr, error, code) {
+                    //    swal.fire('Kesalahan', 'Maaf, gagal mengambil data dari server', 'error')
+                    // }
+                },
+                columns: [
+                    { data: null, className: 'text-center', width: '5%', render: function (data, type, row, meta) { return meta.row + 1; } },
+                    //{ data: 'TGL_DATA', className: 'text-center', render: function (d) { return moment(d).format("DD/MM/YYYY") } },
+                    { data: 'RISK_METRIC', width: '50%', className: 'text-left', render: function (data, type, row) { return data } },
+                    { data: 'RISK_APP_1', className: 'text-center', render: function (data, type, row) { return data } },
+                    { data: 'RISK_APP_2', className: 'text-center', render: function (data, type, row) { return data } },
+                    { data: 'RISK_TOL_1', className: 'text-center', render: function (data, type, row) { return data } },
+                    { data: 'RISK_TOL_2', className: 'text-center', render: function (data, type, row) { return data } },
+                    { data: 'M01', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M02', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M03', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M04', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M05', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M06', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M07', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M08', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M09', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M10', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M11', className: 'text-center', render: function (data, type, row) { return data + '%'} },
+                    { data: 'M12', className: 'text-center', render: function (data, type, row) { return data + '%'} }
+                ],
+                //fixedColumns: {
+                //    left: 6,
+                //    right: 1
+                //},
+                //processing: true,
+                //serverSide: true,
+                autoWidth: false,
+                oLanguage: { sSearch: 'Cari:' },
+                dom: "<'row'<'col-sm-4'l><'col-sm-4 text-center'B><'col-sm-4'f>>tp",
+                buttons: [
+                    { extend: 'copy', className: 'btn-sm' },
+                    { extend: 'csv', title: 'Hasil Perhitungan SRAK', className: 'btn-sm' },
+                    {
+                        extend: 'pdf',
+                        title: 'Hasil Perhitungan SRAK',
+                        orientation: 'landscape',
+                        pageSize: 'LEGAL',
+                        className: 'btn-sm',
+                    }
+                ],
+                aLengthMenu: [
+                    [10, 25, 50, 100, 200, -1],
+                    [10, 25, 50, 100, 200, "All"]
+                ],
+                iDisplayLength: 0,
+                drawCallback: function (settings) {
+                    //if (!$('#dtTabungan').parent().hasClass("table-responsive")) {
+                    //   $('#dtTabungan').wrap("<div class='table-responsive'></div>");
+                    //}
+
+                    $('#dtOperasional').wrap("<div class='table-responsive'></div>");
+                    $('[data-toggle="tooltip"]').tooltip();
+                }
+            });
+        }
+
+        function GetDeposito() {
+            $('#dtDeposito').DataTable().destroy();
+            $('#dtDeposito').DataTable({
+                ajax: {
+                    url: '@Url.Action("GetDataSRAK", "SRAK")',
+                    dataSrc: '[]',
+                    type: 'GET',
+                    data: { tglData: $('#tglData').val(), kdKNTR: $('#kdCabang').val(), jenisProduk: 'DEPOSITO' }
+                    //async: true
+                    //error: function (xhr, error, code) {
+                    //    swal.fire('Kesalahan', 'Maaf, gagal mengambil data dari server', 'error')
+                    //}
+                },
+                columns: [
+                    { data: null, className: 'text-center', width: '5%', render: function (data, type, row, meta) { return meta.row + 1; } },
+                    { data: 'TGL_DATA', className: 'text-center', render: function (d) { return moment(d).format("DD/MM/YYYY") } },
+                    { data: 'KETERANGAN', className: 'text-left', render: function (data, type, row) { return data } },
+                    { data: 'NOMINALRP', className: 'text-right', render: $.fn.dataTable.render.number('.', ',', 2) },
+                    { data: 'BUNGARP', className: 'text-right', render: $.fn.dataTable.render.number('.', ',', 2) },
+                    { data: 'BUNGA_SRAK', className: 'text-center', render: $.fn.dataTable.render.number('.', ',', 2) },
+                    { data: 'NOMINAL_SRAK', className: 'text-right', render: $.fn.dataTable.render.number('.', ',', 2) },
+                ],
+                //processing: true,
+                //serverSide: true,
+                autoWidth: false,
+                oLanguage: { sSearch: 'Cari:' },
+                dom: "<'row'<'col-sm-4'l><'col-sm-4 text-center'B><'col-sm-4'f>>tp",
+                buttons: [
+                    { extend: 'copy', className: 'btn-sm' },
+                    { extend: 'csv', title: 'Hasil Perhitungan SRAK', className: 'btn-sm' },
+                    {
+                        extend: 'pdf',
+                        title: 'Hasil Perhitungan SRAK',
+                        orientation: 'landscape',
+                        pageSize: 'LEGAL',
+                        className: 'btn-sm',
+                    }
+                ],
+                aLengthMenu: [
+                    [10, 25, 50, 100, 200, -1],
+                    [10, 25, 50, 100, 200, "All"]
+                ],
+                iDisplayLength: 0,
+                drawCallback: function (settings) {
+                    //if (!$('#dtDeposito').parent().hasClass("table-responsive")) {
+                    //   $('#dtDeposito').wrap("<div class='table-responsive'></div>");
+                    //}
+
+                    $('#dtDeposito').wrap("<div class='table-responsive'></div>");
+                    $('[data-toggle="tooltip"]').tooltip();
+                },
+                footerCallback: function ( row, data, start, end, display ) {
+                    var api = this.api(), data;
+
+                    var intVal = function ( i ) {
+                        return typeof i === 'string' ?
+                            i.replace(/[\$,]/g, '')*1 :
+                            typeof i === 'number' ?
+                                i : 0;
+                    };
+
+                    var totalNominal = api
+                        .column(3, { page: 'current'})
+                        .data()
+                        .reduce( function (a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0 );
+
+                    var totalBunga = api
+                        .column(4, { page: 'current'})
+                        .data()
+                        .reduce( function (a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0 );
+
+                    var totalBungaSRAK = api
+                        .column(6, { page: 'current'})
+                        .data()
+                        .reduce( function (a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0 );
+
+                    $(api.column(0).footer()).html('T O T A L');
+                    $(api.column(3).footer()).html(formatMoney(totalNominal));
+                    $(api.column(4).footer()).html(formatMoney(totalBunga));
+                    $(api.column(6).footer()).html(formatMoney(totalBungaSRAK));
+                }
+            });
+        }
+
+         function GetGiro() {
+            $('#dtGiro').DataTable().destroy();
+            $('#dtGiro').DataTable({
+                ajax: {
+                    url: '@Url.Action("GetDataSRAK", "SRAK")',
+                    dataSrc: '[]',
+                    type: 'GET',
+                    data: { tglData: $('#tglData').val(), kdKNTR: $('#kdCabang').val(), jenisProduk: 'GIRO' }
+                    //async: true
+                    //error: function (xhr, error, code) {
+                    //    swal.fire('Kesalahan', 'Maaf, gagal mengambil data dari server', 'error')
+                    //}
+                },
+                columns: [
+                    { data: null, className: 'text-center', width: '5%', render: function (data, type, row, meta) { return meta.row + 1; } },
+                    { data: 'TGL_DATA', className: 'text-center', render: function (d) { return moment(d).format("DD/MM/YYYY") } },
+                    { data: 'KETERANGAN', className: 'text-left', render: function (data, type, row) { return data } },
+                    { data: 'NOMINALRP', className: 'text-right', render: $.fn.dataTable.render.number('.', ',', 2) },
+                    { data: 'BUNGARP', className: 'text-right', render: $.fn.dataTable.render.number('.', ',', 2) },
+                    { data: 'BUNGA_SRAK', className: 'text-center', render: $.fn.dataTable.render.number('.', ',', 2) },
+                    { data: 'NOMINAL_SRAK', className: 'text-right', render: $.fn.dataTable.render.number('.', ',', 2) },
+                ],
+                //processing: true,
+                //serverSide: true,
+                autoWidth: false,
+                oLanguage: { sSearch: 'Cari:' },
+                dom: "<'row'<'col-sm-4'l><'col-sm-4 text-center'B><'col-sm-4'f>>tp",
+                buttons: [
+                    { extend: 'copy', className: 'btn-sm' },
+                    { extend: 'csv', title: 'Hasil Perhitungan SRAK', className: 'btn-sm' },
+                    {
+                        extend: 'pdf',
+                        title: 'Hasil Perhitungan SRAK',
+                        orientation: 'landscape',
+                        pageSize: 'LEGAL',
+                        className: 'btn-sm',
+                    }
+                ],
+                aLengthMenu: [
+                    [10, 25, 50, 100, 200, -1],
+                    [10, 25, 50, 100, 200, "All"]
+                ],
+                iDisplayLength: 0,
+                drawCallback: function (settings) {
+                    //if (!$('#dtGiro').parent().hasClass("table-responsive")) {
+                    //   $('#dtGiro').wrap("<div class='table-responsive'></div>");
+                    //}
+
+                    $('#dtGiro').wrap("<div class='table-responsive'></div>");
+                    $('[data-toggle="tooltip"]').tooltip();
+                },
+                footerCallback: function ( row, data, start, end, display ) {
+                    var api = this.api(), data;
+
+                    var intVal = function ( i ) {
+                        return typeof i === 'string' ?
+                            i.replace(/[\$,]/g, '')*1 :
+                            typeof i === 'number' ?
+                                i : 0;
+                    };
+
+                    var totalNominal = api
+                        .column(3, { page: 'current'})
+                        .data()
+                        .reduce( function (a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0 );
+
+                    var totalBunga = api
+                        .column(4, { page: 'current'})
+                        .data()
+                        .reduce( function (a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0 );
+
+                    var totalBungaSRAK = api
+                        .column(6, { page: 'current'})
+                        .data()
+                        .reduce( function (a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0 );
+
+                    $(api.column(0).footer()).html('T O T A L');
+                    $(api.column(3).footer()).html(formatMoney(totalNominal));
+                    $(api.column(4).footer()).html(formatMoney(totalBunga));
+                    $(api.column(6).footer()).html(formatMoney(totalBungaSRAK));
+                }
+            });
+         }
+
+        function GetPinjaman() {
+            $('#dtPinjaman').DataTable().destroy();
+            $('#dtPinjaman').DataTable({
+                ajax: {
+                    url: '@Url.Action("GetDataSRAK", "SRAK")',
+                    dataSrc: '[]',
+                    type: 'GET',
+                    data: { tglData: $('#tglData').val(), kdKNTR: $('#kdCabang').val(), jenisProduk: 'PINJAMAN' }
+                    //async: true
+                    //error: function (xhr, error, code) {
+                    //    swal.fire('Kesalahan', 'Maaf, gagal mengambil data dari server', 'error')
+                    //}
+                },
+                columns: [
+                    { data: null, className: 'text-center', width: '5%', render: function (data, type, row, meta) { return meta.row + 1; } },
+                    { data: 'TGL_DATA', className: 'text-center', render: function (d) { return moment(d).format("DD/MM/YYYY") } },
+                    { data: 'KETERANGAN', className: 'text-left', render: function (data, type, row) { return data } },
+                    { data: 'NOMINALRP', className: 'text-right', render: $.fn.dataTable.render.number('.', ',', 2) },
+                    { data: 'BUNGARP', className: 'text-right', render: $.fn.dataTable.render.number('.', ',', 2) },
+                    { data: 'BUNGA_SRAK', className: 'text-center', render: $.fn.dataTable.render.number('.', ',', 2) },
+                    { data: 'NOMINAL_SRAK', className: 'text-right', render: $.fn.dataTable.render.number('.', ',', 2) },
+                ],
+                //processing: true,
+                //serverSide: true,
+                autoWidth: false,
+                oLanguage: { sSearch: 'Cari:' },
+                dom: "<'row'<'col-sm-4'l><'col-sm-4 text-center'B><'col-sm-4'f>>tp",
+                buttons: [
+                    { extend: 'copy', className: 'btn-sm' },
+                    { extend: 'csv', title: 'Hasil Perhitungan SRAK', className: 'btn-sm' },
+                    {
+                        extend: 'pdf',
+                        title: 'Hasil Perhitungan SRAK',
+                        orientation: 'landscape',
+                        pageSize: 'LEGAL',
+                        className: 'btn-sm',
+                    }
+                ],
+                aLengthMenu: [
+                    [10, 25, 50, 100, 200, -1],
+                    [10, 25, 50, 100, 200, "All"]
+                ],
+                iDisplayLength: 0,
+                drawCallback: function (settings) {
+                    //if (!$('#dtPinjaman').parent().hasClass("table-responsive")) {
+                    //   $('#dtPinjaman').wrap("<div class='table-responsive'></div>");
+                    //}
+
+                    $('#dtPinjaman').wrap("<div class='table-responsive'></div>");
+                    $('[data-toggle="tooltip"]').tooltip();
+                },
+                footerCallback: function ( row, data, start, end, display ) {
+                    var api = this.api(), data;
+
+                    var intVal = function ( i ) {
+                        return typeof i === 'string' ?
+                            i.replace(/[\$,]/g, '')*1 :
+                            typeof i === 'number' ?
+                                i : 0;
+                    };
+
+                    var totalNominal = api
+                        .column(3, { page: 'current'})
+                        .data()
+                        .reduce( function (a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0 );
+
+                    var totalBunga = api
+                        .column(4, { page: 'current'})
+                        .data()
+                        .reduce( function (a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0 );
+
+                    var totalBungaSRAK = api
+                        .column(6, { page: 'current'})
+                        .data()
+                        .reduce( function (a, b) {
+                            return intVal(a) + intVal(b);
+                        }, 0 );
+
+                    $(api.column(0).footer()).html('T O T A L');
+                    $(api.column(3).footer()).html(formatMoney(totalNominal));
+                    $(api.column(4).footer()).html(formatMoney(totalBunga));
+                    $(api.column(6).footer()).html(formatMoney(totalBungaSRAK));
+                }
+            });
+        }
+
+        function ReloadDaftar() {
+            $('#dtTabungan').DataTable().ajax.reload(null, false);
+            //$('#dtGiro').DataTable().ajax.reload(null, false);
+            //$('#dtDeposito').DataTable().ajax.reload(null, false);
+            //$('#dtPinjaman').DataTable().ajax.reload(null, false);
+        }
+        
+        $('#kdCabang').change(function () {
+            GetTabungan();
+            //GetGiro();
+            //GetDeposito();
+            //GetPinjaman();
+
+            var oldEffect = $('.setEffect').attr('data-effect');
+            var newEffect = $(".animation-select").val(); // bounceInRight
+        })
+        
+        $('#tglData').change(function () {
+            GetTabungan();
+            //GetGiro();
+            //GetDeposito();
+            //GetPinjaman();
+        })
+        
+        function reGenerateData(tglData) {
+            $.post('@Url.Action("reGenerateData", "SRAK")', { tglData: tglData }, function (data) {
+                const resData = JSON.parse(JSON.stringify(data));
+                if (resData.code === '00') {
+                    swal.fire("Sukses", resData.message, "success");
+                    ReloadDaftar();
+                }
+                else {
+                    swal.fire("Error", resData.message, "error");
+                }
+            })
+        }
+        
+        $('#breGenerate').click(function () {
+            swal.fire({
+                title: 'Konfirmasi',
+                text: 'Apakah benar data akan di hitung ulang / di reGenerate?',
+                type: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Ya, Proses',
+                cancelButtonText: 'Tidak',
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                //reverseButtons: true,
+                showLoaderOnConfirm: true,
+                //customClass: {
+                //    confirmButton: 'btn btn-primary !important;',
+                //    cancelButton: 'btn btn-danger !important;',
+                //},
+                preConfirm: () => {
+                    return new Promise(function () {
+                        reGenerateData($('#tglData').val());
+                    });
+                },
+                allowOutsideClick: () => !swal.isLoading()
+            });
+        })
+    </script>
+}
