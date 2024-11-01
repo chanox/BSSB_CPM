@@ -31,5 +31,6 @@ namespace CPM_Project.Models
         public virtual DbSet<tbUsers> tbUsers { get; set; }
         public virtual DbSet<TB_SRAK_Saldo> TB_SRAK_Saldo { get; set; }
         public virtual DbSet<TB_Customer> TB_CUSTOMERS { get; set; }
+        public virtual DbSet<TB_Aum> tb_aum { get; set; }
     }
 }

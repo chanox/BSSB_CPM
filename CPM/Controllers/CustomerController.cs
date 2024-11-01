@@ -160,4 +160,31 @@ public class CustomerController : Controller
 
         return View();
     }
+
+    public IActionResult GetDataBySID()
+    {
+        /* GetGlobalVariable();
+
+         var resultData = new List<TB_Aum>();
+
+         try
+         {
+             if (LoginData is { JENIS_USER: "Kanpus", GRUP_USER: "RAS" })
+             {
+                 //var tmp = Task.Run(() => JSONTools.GetJSON(_GlobalVariable.ServiceAddress + $"/CPM/GetInfoNasabah?NIK={NIK}")).Result;
+                 //resultData = JsonConvert.DeserializeObject<resInfoCPM>(tmp.ToString());
+
+                 resultData = db.tb_aum.ToList();
+             }
+
+             return Json(resultData);
+         }
+         catch (Exception ex)
+         {
+             return Json(resultData);
+         }*/
+        var SID = "IDD2201HO440825";
+        var data = db.tb_aum.Where(a => a.SID == SID).ToList();
+        return Json(data);
+    }
 }
