@@ -13,6 +13,10 @@
         <Link>.dockerignore</Link>
       </Content>
       <Content Include="obj\Debug\net6.0\SRAK_Online.csproj.CopyComplete" />
+      <Content Update="Views\FasilitasdanLayanan\_CreateSdb.cshtml">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
       <Content Update="wwwroot\Icons\details_close.png">
         <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       </Content>

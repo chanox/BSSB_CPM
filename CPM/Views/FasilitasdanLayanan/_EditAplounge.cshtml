@@ -1,0 +1,67 @@
+﻿@model CPM_Project.Models.CPM.TB_Aplounge
+
+<div class="form-horizontal" data-plus-as-tab="true">
+    <form asp-action="EditAplounge" id="form-edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="ID_APLOUNGE" />
+        <div class="form-group">
+            <label asp-for="NIK" class="control-label col-md-3"></label>
+            <div class="col-md-9">
+                <input asp-for="NIK" class="form-control"/>
+                <span asp-validation-for="NIK" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="NM_NAS" class="control-label col-md-3"></label>
+            <div class="col-md-9">
+                <input asp-for="NM_NAS" class="form-control"/>
+                <span asp-validation-for="NM_NAS" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="KD_UNITKER" class="col-md-3 control-label"></label>
+            <div class="col-md-9">
+                <select asp-for="KD_UNITKER" asp-items="ViewBag.ListUnitKerja" class="form-control select2-kantor">
+                    @*<option disabled selected>- PILIH -</option>*@
+                </select>
+                <span asp-validation-for="KD_UNITKER" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="TGL_PENGGUNAAN" class="control-label col-md-3"></label>
+            <div class="col-md-9">
+                <input asp-for="TGL_PENGGUNAAN" class="form-control" type="date" />
+                <span asp-validation-for="TGL_PENGGUNAAN" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="JUMLAH_PAX" class="control-label col-md-3"></label>
+            <div class="col-md-9">
+                <input asp-for="JUMLAH_PAX" class="form-control" type="number" />
+                <span asp-validation-for="JUMLAH_PAX" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="NM_AIRPORT" class="control-label col-md-3"></label>
+            <div class="col-md-9">
+                <input asp-for="NM_AIRPORT" class="form-control" />
+                <span asp-validation-for="NM_AIRPORT" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FREKUENSI" class="control-label col-md-3"></label>
+            <div class="col-md-9">
+                <input asp-for="FREKUENSI" class="form-control" type="number" />
+                <span asp-validation-for="FREKUENSI" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="BIAYA" class="control-label col-md-3"></label>
+            <div class="col-md-9">
+                <input asp-for="BIAYA" class="form-control" type="number" />
+                <span asp-validation-for="BIAYA" class="text-danger"></span>
+            </div>
+        </div>
+
+    </form>
+</div>

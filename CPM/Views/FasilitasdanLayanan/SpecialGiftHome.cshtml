@@ -1,0 +1,414 @@
+<div class="small-header">
+    <div class="hpanel">
+        <div class="panel-body">
+            <div id="hbreadcrumb" class="pull-right">
+                <ol class="hbreadcrumb breadcrumb">
+                    <li>
+                        <a href="#">@ViewBag.Header</a>
+                    </li>
+                    <li class="active">
+                        <span>@ViewBag.Title </span>
+                    </li>
+                </ol>
+            </div>
+            <h2 class="font-light m-b-xs">
+                @ViewBag.Header
+            </h2>
+            <small>@ViewBag.Keterangan</small>
+        </div>
+    </div>
+</div>
+
+<div class="content transition animated fadeIn">
+    <!--- MODAL ADD --->
+    <div class="modal fade" id="mdlCreateGift" role="dialog" aria-hidden="true" style="display: none;" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="color-line"></div>
+                <div class="modal-header">
+                    <h4 class="modal-title">Form Input Special Gift</h4>
+                    <small><i class="fa fa-quote-right"></i> Pembuatan Data Pemberian Gift</small>
+                </div>
+
+                <div class="modal-body" id="dvCreateGift">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-style="zoom-in" id="bSimpanGift"><i class="fa fa-check"></i> Simpan &amp; Proses</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close"></i>  Batal</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--- MODAL Edit --->
+    <div class="modal fade" id="mdlEditGift" role="dialog" aria-hidden="true" style="display: none;" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="color-line"></div>
+                <div class="modal-header">
+                    <h4 class="modal-title">Form Edit Gift</h4>
+                    <small><i class="fa fa-quote-right"></i> Perubahan Data Pemberian Gift</small>
+                </div>
+
+                <div class="modal-body" id="dvEditGift">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-style="zoom-in" id="bEditGift"><i class="fa fa-check"></i> Ubah Data</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close"></i>  Batal</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="hpanel">
+
+            <div class="panel-heading">
+                @* <div class="pull-right"> *@
+                @*     <a class="btn btn-success" id="bTambahGift" data-toggle="tooltip" data-placement="top" title="Tambahkan Nasabah Priority" href="@Url.Action("DaftarInHouse", "BPDP")"><i class="fa fa-user-plus"></i></a> *@
+                @* </div> *@
+                <h3 class="m-b-xs text-success">DAFTAR SPECIAL GIFT</h3>
+                <i class="fa fa-quote-right"></i> Menampilkan seluruh special gift
+            </div>
+            <div class="panel-body">
+                <div class="text-left m-t-md">
+                    <button class="btn btn-primary btn-sm btn-outline" type="button" id="bTambahGift"><i class="fa fa-edit"></i>  Tambah Data</button>
+                </div>
+                <hr />
+                <table id="dtGift" class="table table-striped table-bordered table-hover" cellpadding="0" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th class="text-center" hidden>Id</th>
+                            <th class="text-center">No</th>
+                            <th class="text-center">No. Identitas</th>
+                            <th class="text-center">Nama Nasabah</th>
+                            <th class="text-center">Cabang</th>
+                            <th class="text-center">Tujuan Pemberian</th>
+                            <th class="text-center">Tanggal Pemberian</th>
+                            <th class="text-center">Frekuensi Pemberian</th>
+                            <th class="text-center">Biaya</th>
+                            <th class="text-center">Action</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+@section Styles {
+    <environment names="Staging,Production,Development">
+        <link rel="stylesheet" href="~/lib/toastr/lib/toastr.min.css"/>
+        <link rel="stylesheet" href="~/lib/datatables/media/css/dataTables.bootstrap.min.css"/>
+        <link rel="stylesheet" href="~/lib/datatables/media/css/responsive.dataTables.min.css"/>
+        <link rel="stylesheet" href="~/lib/datatables.net-bs/css/dataTables.bootstrap.min.css"/>
+        <link rel="stylesheet" href="~/lib/select2/select2.css"/>
+        <link rel="stylesheet" href="~/lib/select2-bootstrap/select2-bootstrap.css"/>
+        <link rel="stylesheet" href="~/lib/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css"/>
+        <link rel="stylesheet" href="~/lib/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"/>
+        <link rel="stylesheet" href="~/lib/clockpicker/dist/bootstrap-clockpicker.min.css"/>
+    </environment>
+}
+
+@section Scripts {
+    <environment names="Development,Staging,Production">
+        <script src="~/lib/datatables/media/js/jquery.dataTables.min.js"></script>
+        <script src="~/lib/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="~/lib/datatables/media/js/dataTables.responsive.min.js"></script>
+        <script src="~/lib/datatables/media/js/dataTables.fixedColumns.min.js"></script>
+        <script src="~/lib/pdfmake/build/pdfmake.min.js"></script>
+        <script src="~/lib/pdfmake/build/vfs_fonts.js"></script>
+        <script src="~/lib/datatables.net-buttons/js/buttons.html5.min.js"></script>
+        <script src="~/lib/datatables.net-buttons/js/buttons.print.min.js"></script>
+        <script src="~/lib/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+        <script src="~/lib/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="~/lib/select2/select2.min.js"></script>
+        <script src="~/lib/moment/moment.js"></script>
+        <script src="~/lib/idle-timer/idle-timer.min.js"></script>
+        <script src="~/lib/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+        <script src="~/lib/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+        <script src="~/lib/clockpicker/dist/bootstrap-clockpicker.min.js"></script>
+    </environment>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $(document).idleTimer(300000);
+            ProfilePiture();
+
+            $('#tglData').val('@DateTime.Now.ToString("yyyy-MM-dd")');
+            $('#tglData').datepicker({ format: 'yyyy-mm-dd' });
+            getGiftList();
+
+            $('#bTambahGift').on('click', function () {
+                GetCreateGift();
+                //$('#mdlCreateUser').modal({ backdrop: false }).modal('show');
+            });
+        });
+
+        $('#mdlCreateGift').on('hidden.bs.modal', function () {
+            $('#dvCreateGift').html('');
+        });
+        $('#mdlEditGift').on('hidden.bs.modal', function () {
+            $('#dvEditGift').html('');
+        });
+
+        function GetCreateGift() {
+            $.get('@Url.Action("CreateGift", "FasilitasdanLayanan")', null, function (result) {
+                $('#dvCreateGift').html(result);
+                $.validator.unobtrusive.parse("#dvCreateGift");
+                $('#TGL_GIFT').val('@DateTime.Now.ToString("yyyy-MM-dd")');
+                $('#TGL_GIFT').datepicker({ format: 'yyyy-mm-dd' });
+
+                $('.select2-kantor').select2();
+                $('#mdlCreateGift').modal('show');
+            });
+        }
+
+        $('#bSimpanGift').click(function () {
+            swal.fire({
+                title: 'Konfirmasi',
+                text: 'Data yang akan di simpan sudah benar?',
+                type: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Ya, Proses',
+                cancelButtonText: 'Tidak',
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                //reverseButtons: true,
+                showLoaderOnConfirm: true,
+                preConfirm: () => {
+                    return new Promise(function () {
+                        PostCreateGift();
+                    });
+                },
+                allowOutsideClick: () => !swal.isLoading()
+            });
+        });
+
+        function PostCreateGift() {
+            if ($('#form-create').valid()) {
+                $.post('@Url.Action("CreateGift", "FasilitasdanLayanan")', $('#form-create').serializeArray(), function (result) {
+
+                    if (result === '0') {
+                        //$('#mdlTanya').modal('hide');
+                        swal.fire('Informasi', 'Data berhasil di simpan.', 'success')
+                            .then(() => { getGiftList(); });
+                    }
+                    else {
+                        alert(result);
+                        return;
+                    }
+
+                    //$('#dtDaftarUser').DataTable().ajax.reload(null, false);
+                    $('#mdlCreateGift').modal('hide');
+                });
+            }
+            else {
+                swal.close();
+                //$('#NIK').focus();
+            }
+        }
+
+        $('#dtGift').on('click', 'button.btn-delete', function (e) {
+            var id = $(this).closest("tr").find(".id").text();
+            swal.fire({
+                title: 'Konfirmasi',
+                text: 'Data yang akan di hapus sudah benar?',
+                type: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Ya, Proses',
+                cancelButtonText: 'Tidak',
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                //reverseButtons: true,
+                showLoaderOnConfirm: true,
+                //customClass: {
+                //    confirmButton: 'btn btn-primary !important;',
+                //    cancelButton: 'btn btn-danger !important;',
+                //},
+                preConfirm: () => {
+                    return new Promise(function () {
+                        PostDeleteGift(id);
+                    });
+                },
+                allowOutsideClick: () => !swal.isLoading()
+            });
+        });
+
+        function PostDeleteGift(id) {
+            $.post('@Url.Action("DeleteGift", "FasilitasdanLayanan")', { ID_GIFT : id }, function (result) {
+
+                if (result === "0") {
+                    //$('#mdlTanya').modal('hide');
+                    swal.fire('Informasi', 'Data berhasil di hapus.', 'success')
+                        .then(() => { getGiftList(); });
+                }
+                else {
+                    return;
+                }
+
+                //$('#dtSdb').DataTable().ajax.reload(null, false);
+            });
+        }
+
+        $('#dtGift').on('click', 'button.btn-edit', function (e) {
+            var id = $(this).closest("tr").find(".id").text();
+            GetEditGift(id);
+        });
+
+        function GetEditGift(id) {
+            $.get('@Url.Action("EditGift", "FasilitasdanLayanan")', { ID_GIFT : id }, function (result) {
+                $('#dvEditGift').html(result);
+                $.validator.unobtrusive.parse("#dvEditGift");
+                $('#TGL_GIFT').datepicker({ format: 'yyyy-mm-dd' });
+                $('.select2-kantor').select2();
+
+                $('#mdlEditGift').modal('show');
+            });
+        }
+
+        $('#bEditGift').click(function () {
+            swal.fire({
+                title: 'Konfirmasi',
+                text: 'Data yang akan di ubah sudah benar?',
+                type: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Ya, Proses',
+                cancelButtonText: 'Tidak',
+                //confirmButtonColor: '#3085d6',
+                //cancelButtonColor: '#d33',
+                //reverseButtons: true,
+                showLoaderOnConfirm: true,
+                preConfirm: () => {
+                    return new Promise(function () {
+                        PostEditGift();
+                    });
+                },
+                allowOutsideClick: () => !swal.isLoading()
+            });
+        });
+
+        function PostEditGift() {
+            if ($('#form-edit').valid()) {
+                $.post('@Url.Action("EditGift", "FasilitasdanLayanan")', $('#form-edit').serializeArray(), function (result) {
+
+                    if (result === '0') {
+                        swal.fire('Informasi', 'Data berhasil di simpan.', 'success')
+                            .then(() => { getGiftList(); });
+                    }
+                    else {
+                        return;
+                    }
+
+                    //$('#dtSdb').DataTable().ajax.reload(null, false);
+                    $('#mdlEditGift').modal('hide');
+                });
+            }
+            else {
+                swal.close();
+                //$('#USER_NAME').focus();
+            }
+        }
+
+        // Idle Time
+        $(document).on("idle.idleTimer", function (event, elem, obj) {
+            window.location = '@Url.Action("Login", "User")';
+        });
+
+        function sleep(milliseconds) {
+            var start = new Date().getTime();
+            for (var i = 0; i < 1e7; i++) {
+                if ((new Date().getTime() - start) > milliseconds) {
+                    break;
+                }
+            }
+        };
+
+        //setInterval(function () { ReloadDaftar(); }, 25000);
+
+        function formatMoney(amount, decimalCount = 2, decimal = ",", thousands = ".") {
+            try {
+                decimalCount = Math.abs(decimalCount);
+                decimalCount = isNaN(decimalCount) ? 2 : decimalCount;
+
+                const negativeSign = amount < 0 ? "-" : "";
+
+                let i = parseInt(amount = Math.abs(Number(amount) || 0).toFixed(decimalCount)).toString();
+                let j = (i.length > 3) ? i.length % 3 : 0;
+
+                return negativeSign +
+                    (j ? i.substr(0, j) + thousands : '') +
+                    i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousands) +
+                    (decimalCount ? decimal + Math.abs(amount - i).toFixed(decimalCount).slice(2) : "");
+            } catch (e) {
+                console.log(e)
+            }
+        };
+
+        function getGiftList() {
+            $('#dtGift').DataTable().destroy();
+            $('#dtGift').DataTable({
+                ajax: {
+                    url: '@Url.Action("GetListGift", "FasilitasdanLayanan")',
+                    dataSrc: '[]',
+                    type: 'GET',
+                    data: {}
+                    //async: true
+                    // error: function (xhr, error, code) {
+                    //    swal.fire('Kesalahan', 'Maaf, gagal mengambil data dari server', 'error')
+                    // }
+                },
+                columns: [
+                    { data: 'ID_GIFT', className: 'id hidden', render: function (data, type, row) { return data } },
+                    { data: null, className: 'text-center', width: '5%', render: function (data, type, row, meta) { return meta.row + 1; } },
+                    { data: 'NIK', className: 'text-left', render: function (data, type, row) { return data } },
+                    { data: 'NM_NAS', className: 'text-left', render: function (data, type, row) { return data } },
+                    { data: 'CABANG', className: 'text-left', render: function (data, type, row) { return data } },
+                    { data: 'TUJUAN_GIFT', className: 'text-left', render: function (data, type, row) { return data } },
+                    { data: 'TGL_GIFT', className: 'text-left', render: function (d) { return moment(d).format("DD/MM/YYYY") } },
+                    { data: 'FREKUENSI', className: 'text-left', render: function (data, type, row) { return data } },
+                    { data: 'BIAYA', className: 'text-left', render: function (data, type, row) { return data } },
+                    {
+                        data: null,
+                        className: 'text-center',
+                        //width: '20%',
+                        defaultContent: '<button type="button" class="btn btn-xs btn-primary btn-outline btn-edit" data-toggle="tooltip" data-placement="top" title="Ubah"><i class="fa fa-pencil"></i></button> <button type="button" class="btn btn-xs btn-danger btn-outline btn-delete" data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fa fa-remove"></i></button>'
+                    }
+                ],
+                //processing: true,
+                //serverSide: true,
+                autoWidth: false,
+                oLanguage: { sSearch: 'Cari:' },
+                dom: "<'row'<'col-sm-4'l><'col-sm-4 text-center'B><'col-sm-4'f>>tp",
+                buttons: [
+                    { extend: 'copy', className: 'btn-sm' },
+                    { extend: 'csv', title: 'CPM', className: 'btn-sm' },
+                    {
+                        extend: 'pdf',
+                        title: 'CPM',
+                        orientation: 'landscape',
+                        pageSize: 'LEGAL',
+                        className: 'btn-sm',
+                    }
+                ],
+                aLengthMenu: [
+                    [10, 25, 50, 100, 200, -1],
+                    [10, 25, 50, 100, 200, "All"]
+                ],
+                iDisplayLength: 0,
+                drawCallback: function (settings) {
+                    //if (!$('#dtTabungan').parent().hasClass("table-responsive")) {
+                    //   $('#dtTabungan').wrap("<div class='table-responsive'></div>");
+                    //}
+
+                    $('#dtGift').wrap("<div class='table-responsive'></div>");
+                    $('[data-toggle="tooltip"]').tooltip();
+                }
+            });
+        }
+    </script>
+}
