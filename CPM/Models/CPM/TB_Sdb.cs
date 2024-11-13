@@ -1,8 +1,10 @@
 ﻿using Newtonsoft.Json.Serialization;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CPM_Project.Models.CPM
 {
+    [Table("tb_sdb")]
     public class TB_Sdb
     {
         [Key]

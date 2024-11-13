@@ -52,27 +52,27 @@ namespace CPM_Project.Controllers
 
 
         // Safe Deposit Box
-		public IActionResult SdbHome()
-		{
-			ViewBag.Header = "Fasilitas dan Layanan";
-			ViewBag.Title = "Safe Deposit Box";
-			ViewBag.Keterangan = "Safe Deposit Box";
+        public IActionResult SdbHome()
+        {
+            ViewBag.Header = "Fasilitas dan Layanan";
+            ViewBag.Title = "Safe Deposit Box";
+            ViewBag.Keterangan = "Safe Deposit Box";
 
-			GetGlobalVariable();
+            GetGlobalVariable();
 
-			if (LoginData == null)
-			{
-				return RedirectToAction("Login", "User");
-			}
+            if (LoginData == null)
+            {
+                return RedirectToAction("Login", "User");
+            }
 
-			ViewBag.NAMA_LENGKAP = LoginData.NAMA_LENGKAP;
-			ViewBag.NM_UNITKER = LoginData.NM_UNITKER;
-			ViewBag.LAST_LOGIN = LoginData.LAST_LOGIN.ToString("dd-MM-yyyy HH:mm:dd");
+            ViewBag.NAMA_LENGKAP = LoginData.NAMA_LENGKAP;
+            ViewBag.NM_UNITKER = LoginData.NM_UNITKER;
+            ViewBag.LAST_LOGIN = LoginData.LAST_LOGIN.ToString("dd-MM-yyyy HH:mm:dd");
 
-			ViewBag.ListCabang = new SelectList(db.Set<msUnitKerja>(), "KD_UNITKER", "NM_UNITKER");
+            ViewBag.ListCabang = new SelectList(db.Set<msUnitKerja>(), "KD_UNITKER", "NM_UNITKER");
 
-			return View();
-		}
+            return View();
+        }
 
         [HttpGet]
         //[AuthorizeAccess(Level = "Admin")]

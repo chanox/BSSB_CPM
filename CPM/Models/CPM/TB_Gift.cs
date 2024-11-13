@@ -1,8 +1,10 @@
 ﻿using Newtonsoft.Json.Serialization;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CPM_Project.Models.CPM
 {
+    [Table("tb_gift")]
     public class TB_Gift
     {
         [Key]
