@@ -23,8 +23,7 @@ _UpgradeReport_Files/
 ###############
 # Directories #
 ###############
-*/bin
-*/obj
+Debug
 TestResults/
 ###################
 # Web publish log #
@@ -74,3 +73,6 @@ _[Ss]cripts
 *.nupkg
 *.ncrunchsolution
 *.dot[Cc]over
+/CPM/bin/Debug/*
+
+/CPM/obj/Debug/net6.0/ref/CPM_Project.dll
