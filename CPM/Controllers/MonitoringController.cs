@@ -243,28 +243,30 @@ namespace CPM_Project.Controllers
 
         public List<TB_SRAK_Saldo> getSaldoList()
         {
-            GetGlobalVariable();
+            // GetGlobalVariable();
+            //
+            // if (LoginData == null)
+            // {
+            //     return new List<TB_SRAK_Saldo>();
+            // }
+            //
+            // var listSaldo = db.TB_SRAK_Saldo.ToList();
+            //
+            // try
+            // {
+            //     foreach (var items in listSaldo)
+            //     {
+            //         items.SALDO_AKHIR = getSaldoAkhir(items.NO_REK);
+            //     }
+            //
+            //     return listSaldo;
+            // }
+            // catch
+            // {
+            //     return listSaldo;
+            // }
 
-            if (LoginData == null)
-            {
-                return new List<TB_SRAK_Saldo>();
-            }
-
-            var listSaldo = db.TB_SRAK_Saldo.ToList();
-
-            try
-            {
-                foreach (var items in listSaldo)
-                {
-                    items.SALDO_AKHIR = getSaldoAkhir(items.NO_REK);
-                }
-
-                return listSaldo;
-            }
-            catch
-            {
-                return listSaldo;
-            }
+            return new List<TB_SRAK_Saldo>();
         }
     }
 }

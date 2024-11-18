@@ -59,4 +59,10 @@ public class resInfoNasabah
     public string KET_STS_NAS { get; set; }
     public string NMKNTRREK { get; set; }
     public string NMKNTRINDUKREK { get; set; }
+    
+    public string KODE_RM { get; set; }
+    public string KD_UNITKER { get; set; }
+    public string KELOMPOK_NASABAH { get; set; }
+    public string SID { get; set; }
+    public string TIER { get; set; }
 }

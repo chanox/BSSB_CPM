@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "b05oT21CkuE=",
+  "dgSpecHash": "7Bt/xdK+NQM=",
   "success": true,
   "projectFilePath": "C:\\Users\\arhdt\\source\\repos\\BSSB_CPM\\CPM\\CPM_Project.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\arhdt\\.nuget\\packages\\advancedstringbuilder\\0.1.1\\advancedstringbuilder.0.1.1.nupkg.sha512",
+    "C:\\Users\\arhdt\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\arhdt\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\6.0.26\\microsoft.aspnetcore.jsonpatch.6.0.26.nupkg.sha512",
     "C:\\Users\\arhdt\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\6.0.26\\microsoft.aspnetcore.mvc.newtonsoftjson.6.0.26.nupkg.sha512",
     "C:\\Users\\arhdt\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\6.0.28\\microsoft.aspnetcore.mvc.razor.extensions.6.0.28.nupkg.sha512",
@@ -18,7 +19,9 @@
     "C:\\Users\\arhdt\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.26\\microsoft.entityframeworkcore.6.0.26.nupkg.sha512",
     "C:\\Users\\arhdt\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.26\\microsoft.entityframeworkcore.abstractions.6.0.26.nupkg.sha512",
     "C:\\Users\\arhdt\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.26\\microsoft.entityframeworkcore.analyzers.6.0.26.nupkg.sha512",
-    "C:\\Users\\arhdt\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.7\\microsoft.entityframeworkcore.relational.6.0.7.nupkg.sha512",
+    "C:\\Users\\arhdt\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.26\\microsoft.entityframeworkcore.design.6.0.26.nupkg.sha512",
+    "C:\\Users\\arhdt\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.26\\microsoft.entityframeworkcore.relational.6.0.26.nupkg.sha512",
+    "C:\\Users\\arhdt\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\6.0.26\\microsoft.entityframeworkcore.tools.6.0.26.nupkg.sha512",
     "C:\\Users\\arhdt\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\arhdt\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.1\\microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",
     "C:\\Users\\arhdt\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",

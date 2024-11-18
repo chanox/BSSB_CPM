@@ -9,7 +9,7 @@ namespace CPM_Project.Models.CPM
     {
         [Key]
         public int ID_AUM { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime? Date { get; set; }
         public string ClientID { get; set; }
         public string ClientName { get; set; }
         public string BankAccountNo { get; set; }
@@ -26,7 +26,7 @@ namespace CPM_Project.Models.CPM
         public string ReferralID { get; set; }
         public string BankID { get; set; }
         public string BankAccountName { get; set; }
-        public DateTime MaturityDate { get; set; }
+        public DateTime? MaturityDate { get; set; }
         public Decimal CouponPercent { get; set; }
         public string SalesID { get; set; }
         public string SalesName { get; set; }
