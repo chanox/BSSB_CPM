@@ -53,6 +53,10 @@
       "PackagePath": "staticwebassets\\bck4_v2.png"
     },
     {
+      "Id": "C:\\Users\\arhdt\\source\\repos\\BSSB_CPM\\CPM\\wwwroot\\bg-prio.jpg",
+      "PackagePath": "staticwebassets\\bg-prio.jpg"
+    },
+    {
       "Id": "C:\\Users\\arhdt\\source\\repos\\BSSB_CPM\\CPM\\wwwroot\\css\\back_style.css",
       "PackagePath": "staticwebassets\\css\\back_style.css"
     },

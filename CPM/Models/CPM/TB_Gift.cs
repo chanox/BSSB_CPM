@@ -27,9 +27,6 @@ namespace CPM_Project.Models.CPM
         [Display(Name = "Tanggal Pemberian")]
         public DateTime TGL_GIFT { get; set; }
 
-        [Display(Name = "Frekuensi Pemberian")]
-        public int FREKUENSI { get;set; }
-
         [Display(Name = "Biaya")]
         public decimal BIAYA {  get; set; }
 

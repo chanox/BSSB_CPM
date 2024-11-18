@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4VtBoTB/pbBl0fk5l8AosX51m86e1R9pgvPQ8ORVITw=",
+  "Hash": "6OK4mpdHZ7++h3BDqNZyGxJtrCMtpMqdwX3oEi9jnow=",
   "Source": "CPM_Project",
   "BasePath": "_content/CPM_Project",
   "Mode": "Default",
@@ -72,6 +72,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\bck4_v2.png"
+    },
+    {
+      "Identity": "C:\\Users\\arhdt\\source\\repos\\BSSB_CPM\\CPM\\wwwroot\\bg-prio.jpg",
+      "SourceId": "CPM_Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\arhdt\\source\\repos\\BSSB_CPM\\CPM\\wwwroot\\",
+      "BasePath": "_content/CPM_Project",
+      "RelativePath": "bg-prio.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\bg-prio.jpg"
     },
     {
       "Identity": "C:\\Users\\arhdt\\source\\repos\\BSSB_CPM\\CPM\\wwwroot\\BSSBLogo.png",
