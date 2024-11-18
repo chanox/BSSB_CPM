@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CPM_Project")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2360ceaaea2216470e3792865383ca364d0cdc4e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a2bad797fb0b11b161c16c8aa374f6547765158")]
 [assembly: System.Reflection.AssemblyProductAttribute("CPM_Project")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CPM_Project")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
