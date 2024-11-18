@@ -53,8 +53,22 @@
       "PackagePath": "staticwebassets\\bck4_v2.png"
     },
     {
+<<<<<<< HEAD
       "Id": "C:\\Users\\arhdt\\source\\repos\\BSSB_CPM\\CPM\\wwwroot\\bg-prio.jpg",
       "PackagePath": "staticwebassets\\bg-prio.jpg"
+=======
+<<<<<<< HEAD
+      "Id": "C:\\Users\\arhdt\\source\\repos\\BSSB_CPM\\CPM\\wwwroot\\bg-prio.jpg",
+      "PackagePath": "staticwebassets\\bg-prio.jpg"
+    },
+    {
+      "Id": "C:\\Users\\arhdt\\source\\repos\\BSSB_CPM\\CPM\\wwwroot\\css\\back_style.css",
+      "PackagePath": "staticwebassets\\css\\back_style.css"
+=======
+      "Id": "/Users/bangsat/RiderProjects/BSSB_CPM/CPM/wwwroot/css/back_style.css",
+      "PackagePath": "staticwebassets/css/back_style.css"
+>>>>>>> 3943743650785d0d756fc5a251ff94b5a8ca54b8
+>>>>>>> 8457f338d95787ac80b8e2599cc3df9b29f40f8d
     },
     {
       "Id": "C:\\Users\\arhdt\\source\\repos\\BSSB_CPM\\CPM\\wwwroot\\css\\back_style.css",

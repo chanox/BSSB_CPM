@@ -1,6 +1,14 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "Hash": "6OK4mpdHZ7++h3BDqNZyGxJtrCMtpMqdwX3oEi9jnow=",
+=======
+<<<<<<< HEAD
+  "Hash": "6OK4mpdHZ7++h3BDqNZyGxJtrCMtpMqdwX3oEi9jnow=",
+=======
+  "Hash": "1DUZlL+NqJ8iYuMP7eE/PNdYYkgN67HBcpvqtQO5CDU=",
+>>>>>>> 3943743650785d0d756fc5a251ff94b5a8ca54b8
+>>>>>>> 8457f338d95787ac80b8e2599cc3df9b29f40f8d
   "Source": "CPM_Project",
   "BasePath": "_content/CPM_Project",
   "Mode": "Default",
@@ -39,7 +47,53 @@
       "Identity": "C:\\Users\\arhdt\\source\\repos\\BSSB_CPM\\CPM\\wwwroot\\bck4.png",
       "SourceId": "CPM_Project",
       "SourceType": "Discovered",
+<<<<<<< HEAD
       "ContentRoot": "C:\\Users\\arhdt\\source\\repos\\BSSB_CPM\\CPM\\wwwroot\\",
+=======
+      "ContentRoot": "/Users/bangsat/RiderProjects/BSSB_CPM/CPM/wwwroot/",
+      "BasePath": "_content/CPM_Project",
+      "RelativePath": "bck4_v2.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/bck4_v2.png"
+    },
+    {
+<<<<<<< HEAD
+      "Identity": "C:\\Users\\arhdt\\source\\repos\\BSSB_CPM\\CPM\\wwwroot\\bg-prio.jpg",
+      "SourceId": "CPM_Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\arhdt\\source\\repos\\BSSB_CPM\\CPM\\wwwroot\\",
+      "BasePath": "_content/CPM_Project",
+      "RelativePath": "bg-prio.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\bg-prio.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\arhdt\\source\\repos\\BSSB_CPM\\CPM\\wwwroot\\BSSBLogo.png",
+=======
+      "Identity": "/Users/bangsat/RiderProjects/BSSB_CPM/CPM/wwwroot/bck4.png",
+>>>>>>> 3943743650785d0d756fc5a251ff94b5a8ca54b8
+      "SourceId": "CPM_Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/bangsat/RiderProjects/BSSB_CPM/CPM/wwwroot/",
+>>>>>>> 8457f338d95787ac80b8e2599cc3df9b29f40f8d
       "BasePath": "_content/CPM_Project",
       "RelativePath": "bck4.png",
       "AssetKind": "All",

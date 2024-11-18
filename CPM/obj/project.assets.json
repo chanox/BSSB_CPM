@@ -4492,11 +4492,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\arhdt\\Source\\Repos\\BSSB_CPM\\CPM\\CPM_Project.csproj",
       "projectName": "CPM_Project",
       "projectPath": "C:\\Users\\arhdt\\Source\\Repos\\BSSB_CPM\\CPM\\CPM_Project.csproj",
       "packagesPath": "C:\\Users\\arhdt\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\arhdt\\Source\\Repos\\BSSB_CPM\\CPM\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\arhdt\\source\\repos\\BSSB_CPM\\CPM\\CPM_Project.csproj",
+      "projectName": "CPM_Project",
+      "projectPath": "C:\\Users\\arhdt\\source\\repos\\BSSB_CPM\\CPM\\CPM_Project.csproj",
+      "packagesPath": "C:\\Users\\arhdt\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\arhdt\\source\\repos\\BSSB_CPM\\CPM\\obj\\",
+>>>>>>> 8457f338d95787ac80b8e2599cc3df9b29f40f8d
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\arhdt\\AppData\\Roaming\\NuGet\\NuGet.Config",
