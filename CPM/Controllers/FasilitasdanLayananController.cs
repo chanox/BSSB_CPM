@@ -52,27 +52,27 @@ namespace CPM_Project.Controllers
 
 
         // Safe Deposit Box
-        public IActionResult SdbHome()
-        {
-            ViewBag.Header = "Fasilitas dan Layanan";
-            ViewBag.Title = "Safe Deposit Box";
-            ViewBag.Keterangan = "Safe Deposit Box";
+		public IActionResult SdbHome()
+		{
+			ViewBag.Header = "Fasilitas dan Layanan";
+			ViewBag.Title = "Safe Deposit Box";
+			ViewBag.Keterangan = "Safe Deposit Box";
 
-            GetGlobalVariable();
+			GetGlobalVariable();
 
-            if (LoginData == null)
-            {
-                return RedirectToAction("Login", "User");
-            }
+			if (LoginData == null)
+			{
+				return RedirectToAction("Login", "User");
+			}
 
-            ViewBag.NAMA_LENGKAP = LoginData.NAMA_LENGKAP;
-            ViewBag.NM_UNITKER = LoginData.NM_UNITKER;
-            ViewBag.LAST_LOGIN = LoginData.LAST_LOGIN.ToString("dd-MM-yyyy HH:mm:dd");
+			ViewBag.NAMA_LENGKAP = LoginData.NAMA_LENGKAP;
+			ViewBag.NM_UNITKER = LoginData.NM_UNITKER;
+			ViewBag.LAST_LOGIN = LoginData.LAST_LOGIN.ToString("dd-MM-yyyy HH:mm:dd");
 
-            ViewBag.ListCabang = new SelectList(db.Set<msUnitKerja>(), "KD_UNITKER", "NM_UNITKER");
+			ViewBag.ListCabang = new SelectList(db.Set<msUnitKerja>(), "KD_UNITKER", "NM_UNITKER");
 
-            return View();
-        }
+			return View();
+		}
 
         [HttpGet]
         //[AuthorizeAccess(Level = "Admin")]
@@ -247,7 +247,6 @@ namespace CPM_Project.Controllers
                                CABANG = b.NM_UNITKER,
                                TUJUAN_GIFT = a.TUJUAN_GIFT,
                                TGL_GIFT = a.TGL_GIFT,
-                               FREKUENSI = a.FREKUENSI,
                                BIAYA = a.BIAYA
                            }).ToList();
 
@@ -262,7 +261,17 @@ namespace CPM_Project.Controllers
 
             //ViewBag.ListJenisUser = new SelectList(new string[] { "Admin", "Kanpus", "User" });
             //ViewBag.ListGrupUser = new SelectList(new string[] { "SRAK" });
+            
+            var TujuanGift = new List<SelectListItem>
+            {
+                new SelectListItem { Value = "Ulang Tahun", Text = "Ulang Tahun" },
+                new SelectListItem { Value = "Hari Raya Keagamaan", Text = "Hari Raya Keagamaan" },
+                new SelectListItem { Value = "Pernikahan", Text = "Pernikahan" },
+                new SelectListItem { Value = "Kedukaan", Text = "Kedukaan" },
+                new SelectListItem { Value = "Peresmiaan Usaha Baru", Text = "Peresmiaan Usaha Baru" }
+            };
             ViewBag.ListUnitKerja = new SelectList(db.Set<msUnitKerja>(), "KD_UNITKER", "NM_UNITKER");
+            ViewBag.ListTujuanGift = TujuanGift;
 
             return PartialView("_CreateGift", _tbGift);
         }
@@ -308,7 +317,16 @@ namespace CPM_Project.Controllers
 
             //ViewBag.ListJenisUser = new SelectList(new string[] { "Admin", "Kanpus", "User" });
             //ViewBag.ListGrupUser = new SelectList(new string[] { "SRAK" });
+            var TujuanGift = new List<SelectListItem>
+            {
+                new SelectListItem { Value = "Ulang Tahun", Text = "Ulang Tahun" },
+                new SelectListItem { Value = "Hari Raya Keagamaan", Text = "Hari Raya Keagamaan" },
+                new SelectListItem { Value = "Pernikahan", Text = "Pernikahan" },
+                new SelectListItem { Value = "Kedukaan", Text = "Kedukaan" },
+                new SelectListItem { Value = "Peresmiaan Usaha Baru", Text = "Peresmiaan Usaha Baru" }
+            };
             ViewBag.ListUnitKerja = new SelectList(db.Set<msUnitKerja>(), "KD_UNITKER", "NM_UNITKER");
+            ViewBag.ListTujuanGift = TujuanGift;
 
             return PartialView("_EditGift", _tbGift);
         }

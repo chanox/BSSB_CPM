@@ -45,7 +45,7 @@
                                             @* <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span> *@
                                             <input type="text" id="eNoKTP" class="form-control">
                                             <span class="input-group-btn">
-                                                <button type="button" id="bCekNIK" class="btn btn-primary ladda-button ldCekNik" data-style="zoom-in">
+                                                <button type="button" id="bCekNIK" class="btn btn-default ladda-button ldCekNik" data-style="zoom-in">
                                                     <i class="fa fa-search"></i>
                                                 </button>
                                             </span>
@@ -153,8 +153,6 @@
             eNoKTP.focus();
         });
 
-        var TotalDPK = 0;
-
         // Idle Time
         $(document).on("idle.idleTimer", function (event, elem, obj) {
             window.location = '@Url.Action("Login", "User")';
@@ -232,8 +230,6 @@
 
                 $('#eSaldoTabungan').val(formatMoney(resData.TOTAL_TABUNGAN));
                 $('#eSaldoPinjaman').val(formatMoney(resData.TOTAL_PINJAMAN));
-                
-                TotalDPK = resData.TOTAL_TABUNGAN;
 
                 $('#pSaldo').show();
 
@@ -261,75 +257,6 @@
             $('#dvInfoCustomer').empty();
             GetDataCustomerView($('#eNoKTP').val());
         })
-
-        function GetDataSID(sid) {
-            l = $('.ldCekSID').ladda();
-            l.ladda('start');
-            $.get('@Url.Action("GetDataBySID", "Customer")', { SID: sid }, function (data) {
-                //var saldoTabungan = data.substring(0, data.indexOf('#', data));
-                //var saldoPinjaman = data.substring(data.indexOf('#', data) + 1, data.indexOf('$', data));
-                //
-                //$('#pSaldo').show();
-                //
-                //$('#eSaldoTabungan').val(saldoTabungan);
-                //$('#eSaldoPinjaman').val(saldoPinjaman);
-
-                const resData = JSON.parse(JSON.stringify(data));
-
-                $('#dListSBN tbody').empty();
-
-                var TotalInvestasi = 0;
-
-                $.each(resData, function(index, value)
-                {
-                    var dataRow = '<tr> <td width="65%">' + value.StockName + '</td> <td width="35%" class="text-right"><a href="#"  data-type="text" data-pk="1"  class=" text-right font-bold">' + formatMoney(value.Balance) + '</a></td></tr>'
-                    $('#dListSBN tbody').append(dataRow);
-
-                    TotalInvestasi = TotalInvestasi + value.Balance;
-                });
-
-                $('#eSaldoTabungan').val(formatMoney(TotalDPK + TotalInvestasi));
-                
-                l.ladda('stop');
-
-                //if (resData.code === '00') {
-                //    swal.fire("Sukses", resData.message, "success");
-                //    ReloadDaftar();
-                //}
-                //else {
-                //    swal.fire("Error", resData.message, "error");
-                //}
-            })
-        }
-
-        function SimpanCustomer() {
-            l = $('.ldCekSID').ladda();
-            l.ladda('start');
-            if ($('#form-create').valid()) {
-                $.post('@Url.Action("SimpanCustomer", "Customer")', $('#form-create').serializeArray(), function (result) {
-
-                    if (result === '0') {
-                        swal.fire('Informasi', 'Data berhasil di simpan.', 'success');
-                        //.then(() => { ReloadUserList(); });
-                        l.ladda('stop');
-
-                        $('#pSaldo').hide();
-                        $('#dvInfoCustomer').empty();
-
-                        $('#eNoKTP').val('');
-                        $('#eNoKTP').focus();
-                    }
-                    else {
-                        alert(result);
-                        l.ladda('stop');
-                        return;
-                    }
-                });
-            }
-            else {
-                swal.close();
-            }
-        }
 
         function getCustomerList() {
             $('#dtCustomer').DataTable().destroy();

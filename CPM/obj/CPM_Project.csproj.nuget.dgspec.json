@@ -1,27 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "/Users/bangsat/RiderProjects/BSSB_CPM/CPM/CPM_Project.csproj": {}
+    "C:\\Users\\arhdt\\source\\repos\\BSSB_CPM\\CPM\\CPM_Project.csproj": {}
   },
   "projects": {
-    "/Users/bangsat/RiderProjects/BSSB_CPM/CPM/CPM_Project.csproj": {
+    "C:\\Users\\arhdt\\source\\repos\\BSSB_CPM\\CPM\\CPM_Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/bangsat/RiderProjects/BSSB_CPM/CPM/CPM_Project.csproj",
+        "projectUniqueName": "C:\\Users\\arhdt\\source\\repos\\BSSB_CPM\\CPM\\CPM_Project.csproj",
         "projectName": "CPM_Project",
-        "projectPath": "/Users/bangsat/RiderProjects/BSSB_CPM/CPM/CPM_Project.csproj",
-        "packagesPath": "/Users/bangsat/.nuget/packages/",
-        "outputPath": "/Users/bangsat/RiderProjects/BSSB_CPM/CPM/obj/",
+        "projectPath": "C:\\Users\\arhdt\\source\\repos\\BSSB_CPM\\CPM\\CPM_Project.csproj",
+        "packagesPath": "C:\\Users\\arhdt\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\arhdt\\source\\repos\\BSSB_CPM\\CPM\\obj\\",
         "projectStyle": "PackageReference",
-        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
-          "/Users/bangsat/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\arhdt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "/Users/bangsat/Downloads": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -54,22 +55,6 @@
               "version": "[6.0.28, )"
             },
             "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[6.0.26, )"
-            },
-            "Microsoft.EntityFrameworkCore.Abstractions": {
-              "target": "Package",
-              "version": "[6.0.26, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[6.0.26, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.26, )"
             },
@@ -113,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.202/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     }

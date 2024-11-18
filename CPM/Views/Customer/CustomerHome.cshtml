@@ -220,17 +220,17 @@
                 },
                 columns: [
                     { data: null, className: 'text-center', width: '5%', render: function (data, type, row, meta) { return meta.row + 1; } },
-                    { data: 'NO_NAS', className: 'text-center' },
-                    { data: 'NM_NAS', className: 'text-left'},
-                    { data: 'NO_IDENT', className: 'text-center' },
-                    { data: 'NO_HP', className: 'text-center'},
-                    { data: 'NO_TLP_NAS', className: 'text-center' },
-                    { data: 'NO_TLP_NAS', className: 'text-center' },
+                    { data: 'NO_NAS', className: 'text-center', render: function (d) { return moment(d).format("DD/MM/YYYY") } },
+                    { data: 'NM_NAS', className: 'text-left', render: function (data, type, row) { return data } },
+                    { data: 'NO_IDENT', className: 'text-right', render: $.fn.dataTable.render.number('.', ',', 2) },
+                    { data: 'NO_HP', className: 'text-right', render: $.fn.dataTable.render.number('.', ',', 2) },
+                    { data: 'NO_TLP_NAS', className: 'text-center', render: $.fn.dataTable.render.number('.', ',', 2) },
+                    { data: 'NO_TLP_NAS', className: 'text-right', render: $.fn.dataTable.render.number('.', ',', 2) },
                     {
                         data: null,
                         className: 'text-center',
                         //width: '20%',
-                        defaultContent: '<button type="button" class="btn btn-xs btn-primary btn-edit" data-toggle="tooltip" data-placement="top" title="Ubah"><i class="fa fa-pencil"></i></button> <button type="button" class="btn btn-xs btn-danger btn-delete" data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fa fa-remove"></i></button>'
+                        defaultContent: '<button type="button" class="btn btn-xs btn-primary btn-outline btn-edit" data-toggle="tooltip" data-placement="top" title="Ubah"><i class="fa fa-pencil"></i></button> <button type="button" class="btn btn-xs btn-danger btn-outline btn-delete" data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fa fa-remove"></i></button>'
                     }
                 ],
                 //processing: true,

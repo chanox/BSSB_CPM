@@ -1,7 +1,6 @@
 using System.Net;
 using CPM_Project.Models;
 using Microsoft.AspNetCore.HttpOverrides;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using Newtonsoft.Json.Serialization;
 using WebMarkupMin.AspNetCore6;
@@ -57,7 +56,7 @@ builder.Services.AddWebMarkupMin(o =>
 
 builder.Services.AddSession(options =>
 {
-    options.IdleTimeout = TimeSpan.FromSeconds(3600);
+    options.IdleTimeout = TimeSpan.FromSeconds(60);
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
     options.Cookie.Name = "BaNGsaT";
@@ -75,21 +74,7 @@ builder.Services.AddCors(options =>
 
 //builder.Services.AddSession();
 
-// builder.Services.AddDbContext<AppDBContext>();
-
-// builder.Services.AddDbContext<AppDBContext>(options =>
-//     options.UseMySql(
-//         _GlobalVariable.ConnectionDB, 
-//         new MariaDbServerVersion(ServerVersion.AutoDetect(_GlobalVariable.ConnectionDB))
-//     ));
-
 var app = builder.Build();
-
-// using (var scope = app.Services.CreateScope())
-// {
-//     var dbContext = scope.ServiceProvider.GetRequiredService<AppDBContext>();
-//     dbContext.Database.Migrate();  // Melakukan migrasi otomatis
-// }
 
 app.UseResponseCompression();
 
