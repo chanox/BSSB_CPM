@@ -84,12 +84,7 @@ public class CustomerController : Controller
                 var tmp = Task.Run(() => JSONTools.GetJSON(_GlobalVariable.ServiceAddress + $"/CPM/GetInfoNasabah?NIK={NIK}")).Result;
                 resultData = JsonConvert.DeserializeObject<resInfoCPM>(tmp.ToString());
             }
-            
-            ViewBag.listRM = new SelectList(db.Set<TB_Master_RM>(), "KODE_RM", "NAMA_RM");
-            ViewBag.listKantor = new SelectList(db.Set<msUnitKerja>(), "KD_UNITKER", "NM_UNITKER");
-            ViewBag.listKelompok = new SelectList(new string[] { "Umum", "Khusus"});
-            ViewBag.listTier = new SelectList(new string[] { "Tier 1", "Tier 2", "Tier 3" });
-            
+
             return PartialView("_ViewDataCustomer", resultData.INFO_NASABAH);
         }
         catch (Exception ex)
@@ -128,15 +123,14 @@ public class CustomerController : Controller
 
         try
         {
-            // if (LoginData is { JENIS_USER: "Kanpus", GRUP_USER: "RAS" })
-            // {
-            //     //var tmp = Task.Run(() => JSONTools.GetJSON(_GlobalVariable.ServiceAddress + $"/CPM/GetInfoNasabah?NIK={NIK}")).Result;
-            //     //resultData = JsonConvert.DeserializeObject<resInfoCPM>(tmp.ToString());
-            //
-            //     resultData = db.TB_CUSTOMERS.ToList();
-            // }
+            if (LoginData is { JENIS_USER: "Kanpus", GRUP_USER: "RAS" })
+            {
+                //var tmp = Task.Run(() => JSONTools.GetJSON(_GlobalVariable.ServiceAddress + $"/CPM/GetInfoNasabah?NIK={NIK}")).Result;
+                //resultData = JsonConvert.DeserializeObject<resInfoCPM>(tmp.ToString());
 
-            resultData = db.TB_CUSTOMERS.ToList();
+                resultData = db.TB_CUSTOMERS.ToList();
+            }
+
             return resultData;
         }
         catch (Exception ex)
@@ -145,74 +139,6 @@ public class CustomerController : Controller
         }
     }
     
-
-    [HttpPost]
-    public string SimpanCustomer(TB_Customer data)
-    {
-        GetGlobalVariable();
-
-        try
-        {
-            var tmp = Task.Run(() => JSONTools.GetJSON(_GlobalVariable.ServiceAddress + $"/CPM/GetInfoNasabah?NIK={data.NO_IDENT}")).Result;
-            var resultData = JsonConvert.DeserializeObject<resInfoCPM>(tmp.ToString());
-
-            var dataCustomer = new TB_Customer()
-            {
-                RT = resultData.INFO_NASABAH.RT,
-                RW = resultData.INFO_NASABAH.RW,
-                NEG = resultData.INFO_NASABAH.NEG,
-                SID = data.SID,
-                NO_HP = resultData.INFO_NASABAH.NO_HP,
-                TIER = data.TIER,
-                KD_POS = resultData.INFO_NASABAH.KD_POS,
-                KD_VAL = resultData.INFO_NASABAH.KD_VAL,
-                NM_NAS = resultData.INFO_NASABAH.NM_NAS,
-                NO_KTP = resultData.INFO_NASABAH.NO_KTP,
-                NO_NAS = resultData.INFO_NASABAH.NO_NAS,
-                SALDO = resultData.INFO_NASABAH.SALDO,
-                KODE_RM = data.KODE_RM,
-                NEGARA = resultData.INFO_NASABAH.NEG,
-                ALMT_NAS = resultData.INFO_NASABAH.ALMT_NAS,
-                KD_AGAMA = resultData.INFO_NASABAH.KD_AGAMA,
-                NM_ALIAS = resultData.INFO_NASABAH.NM_ALIAS,
-                NO_IDENT = resultData.INFO_NASABAH.NO_IDENT,
-                SALDORP = resultData.INFO_NASABAH.SALDORP,
-                SLD_RATA = resultData.INFO_NASABAH.SLD_RATA,
-                KD_JNS_KEL = resultData.INFO_NASABAH.KD_JNS_KEL,
-                KD_WRG_NEG = resultData.INFO_NASABAH.KD_WRG_NEG,
-                NO_TLP_NAS = resultData.INFO_NASABAH.NO_TLP_NAS,
-                PROPINSI = resultData.INFO_NASABAH.PROPINSI,
-                REKENING = resultData.INFO_NASABAH.REKENING,
-                TGL_LAHIR = resultData.INFO_NASABAH.TGL_LAHIR,
-                KABUPATEN = resultData.INFO_NASABAH.KABUPATEN,
-                KD_UNITKER = data.KD_UNITKER,
-                KDKNTRCIS = resultData.INFO_NASABAH.KDKNTRCIS,
-                KECAMATAN = resultData.INFO_NASABAH.KECAMATAN,
-                KELURAHAN = resultData.INFO_NASABAH.KELURAHAN,
-                KET_STS_NAS = resultData.INFO_NASABAH.KET_STS_NAS,
-                NM_LENGKAP = resultData.INFO_NASABAH.NM_LENGKAP,
-                NMKNTRCIS = resultData.INFO_NASABAH.NMKNTRCIS,
-                NMKNTRREK = resultData.INFO_NASABAH.NMKNTRREK,
-                TMPT_LAHIR = resultData.INFO_NASABAH.TMPT_LAHIR,
-                KETERANGAN = resultData.INFO_NASABAH.KETERANGAN,
-                NM_GADIS_IBU = resultData.INFO_NASABAH.NM_GADIS_IBU,
-                NO_CUSTOMER = resultData.INFO_NASABAH.NO_IDENT,
-                KDKNTRINDUKCIS = resultData.INFO_NASABAH.KDKNTRINDUKCIS,
-                NMKNTRINDUKCIS = resultData.INFO_NASABAH.NMKNTRINDUKCIS,
-                NMKNTRINDUKREK = resultData.INFO_NASABAH.NMKNTRINDUKREK,
-                KELOMPOK_NASABAH = data.KELOMPOK_NASABAH
-            };
-            
-            db.TB_CUSTOMERS.Add(dataCustomer);
-            db.SaveChanges();
-
-            return "0";
-        }
-        catch (Exception ex)
-        {
-            return "#" + ex.Message;
-        }
-    }
     public IActionResult PengusulanHome()
     {
         ViewBag.Header = "Pengusulan Nasabah Priority";
@@ -235,7 +161,7 @@ public class CustomerController : Controller
         return View();
     }
 
-    public List<TB_Aum> GetDataBySID(string SID)
+    public IActionResult GetDataBySID()
     {
         /* GetGlobalVariable();
 
@@ -257,8 +183,8 @@ public class CustomerController : Controller
          {
              return Json(resultData);
          }*/
-        //var SID = "IDD2201HO440825";
-        var listData = db.tb_aum.Where(a => a.SID == SID).ToList();
-        return listData;
+        var SID = "IDD2201HO440825";
+        var data = db.tb_aum.Where(a => a.SID == SID).ToList();
+        return Json(data);
     }
 }

@@ -1,180 +1,136 @@
 @model CPM_Project.Models.CPM.resInfoNasabah
 
-<form id="form-create">
-    <input hidden="hidden" asp-for="RT"/>
-    <input hidden="hidden" asp-for="RW"/>
-    <input hidden="hidden" asp-for="KDKNTRCIS"/>
-    <input hidden="hidden" asp-for="NEG"/>
-    <input hidden="hidden" asp-for="UMUR"/>
-    <input hidden="hidden" asp-for="NO_NAS"/>
-    <input hidden="hidden" asp-for="NO_IDENT"/>
-    <input hidden="hidden" asp-for="NM_NAS"/>
-    <input hidden="hidden" asp-for="NO_HP"/>
-    <input hidden="hidden" asp-for="NO_TLP_NAS"/>
-    
-    <div class="row">
-        <div class="col-lg-6">
-            <div class="hpanel">
-                <div class="panel-body">
-                    @* <h5>No. CIF / No. Nasabah</h5> *@
-                    @* <p>Nomor ID atau nomor khusus nasabah.</p> *@
-                    @* <div class="form-group"> *@
-                    @*     <div class="input-group col-md-6"> *@
-                    @*         <input asp-for="NO_NAS" type="text" class="form-control" readonly="true"> *@
-                    @*     </div> *@
-                    @* </div> *@
+<div class="row">
+    <div class="col-lg-6">
+        <div class="hpanel">
+            <div class="panel-body">
+                @* <h5>No. CIF / No. Nasabah</h5> *@
+                @* <p>Nomor ID atau nomor khusus nasabah.</p> *@
+                @* <div class="form-group"> *@
+                @*     <div class="input-group col-md-6"> *@
+                @*         <input asp-for="NO_NAS" type="text" class="form-control" readonly="true"> *@
+                @*     </div> *@
+                @* </div> *@
 
-                    <h5>Nama Nasabah</h5>
-                    <p>Nama lengkap nasabah.</p>
-                    <div class="form-group">
-                        <div class="input-group col-lg-12">
-                            <input asp-for="NM_NAS" type="text" class="form-control" readonly="true">
-                        </div>
+                <h5>Nama Nasabah</h5>
+                <p>Nama lengkap nasabah.</p>
+                <div class="form-group">
+                    <div class="input-group col-lg-12">
+                        <input asp-for="NM_NAS" type="text" class="form-control" readonly="true">
                     </div>
+                </div>
 
-                    <h5>Alamat</h5>
-                    <p>Alamat lengkap nasabah sesuai KTP.</p>
-                    <div class="form-group">
-                        <div class="input-group col-lg-12">
-                            <input asp-for="ALMT_NAS" type="text" class="form-control" readonly="true">
-                        </div>
+                <h5>Alamat</h5>
+                <p>Alamat lengkap nasabah sesuai KTP.</p>
+                <div class="form-group">
+                    <div class="input-group col-lg-12">
+                        <input asp-for="ALMT_NAS" type="text" class="form-control" readonly="true">
                     </div>
+                </div>
 
-                    <h5>Tanggal Lahir</h5>
-                    <p>Tanggal lahir sesuai dengan KTP.</p>
-                    <div class="form-group">
-                        <div class="input-group col-lg-12">
-                            <input asp-for="TGL_LAHIR" type="text" class="form-control" readonly="true">
-                        </div>
+                <h5>Tanggal Lahir</h5>
+                <p>Tanggal lahir sesuai dengan KTP.</p>
+                <div class="form-group">
+                    <div class="input-group col-lg-12">
+                        <input asp-for="TGL_LAHIR" type="text" class="form-control" readonly="true">
                     </div>
+                </div>
 
-                    <h5>No. HP</h5>
-                    <p>Nomor handphone saat ini atau sesuai data core.</p>
-                    <div class="form-group">
-                        <div class="input-group col-lg-12">
-                            <input asp-for="NO_HP" type="text" class="form-control" readonly="true">
-                        </div>
+                <h5>No. HP</h5>
+                <p>Nomor handphone saat ini atau sesuai data core.</p>
+                <div class="form-group">
+                    <div class="input-group col-lg-12">
+                        <input asp-for="NO_HP" type="text" class="form-control" readonly="true">
                     </div>
+                </div>
 
-                    <h5>No. Telepon</h5>
-                    <p>Nomor telepon saat ini atau sesuai data core.</p>
-                    <div class="form-group">
-                        <div class="input-group col-lg-12">
-                            <input asp-for="NO_TLP_NAS" type="text" class="form-control" readonly="true">
-                        </div>
+                <h5>No. Telepon</h5>
+                <p>Nomor telepon saat ini atau sesuai data core.</p>
+                <div class="form-group">
+                    <div class="input-group col-lg-12">
+                        <input asp-for="NO_TLP_NAS" type="text" class="form-control" readonly="true">
                     </div>
+                </div>
 
-                    <h5>Tipe Nasabah</h5>
-                    <p>Jenis nasabah apakah perorangan atau perusahaan.</p>
-                    <div class="form-group">
-                        <div class="input-group col-lg-12">
-                            <input asp-for="NM_TIPE_NAS" type="text" class="form-control" readonly="true">
-                        </div>
+                <h5>Tipe Nasabah</h5>
+                <p>Jenis nasabah apakah perorangan atau perusahaan.</p>
+                <div class="form-group">
+                    <div class="input-group col-lg-12">
+                        <input asp-for="NM_TIPE_NAS" type="text" class="form-control" readonly="true">
                     </div>
                 </div>
             </div>
-
-            <div class="hpanel">
-                <div class="panel-heading hbuilt">
-                    @* <h3 class="m-b-xs">FILTER</h3> *@
-                    <i class="fa fa-quote-right"></i> Rincian DPK & Pinjaman
-                </div>
-                <div class="panel-body">
-                    <table id="dListSaldo" class="table table-bordered table-striped" style="clear: both">
-                        <tbody></tbody>
-                    </table>
-                </div>
-            </div>
-            <button type="button" id="bProses" class="btn btn-primary ladda-button ldProses" data-style="zoom-in"><i class="fa fa-check"></i> Pengajuan Nasabah Priority</button>
-            <br/>
-            <br/>
         </div>
 
-        <div class="col-lg-6">
-            <div class="hpanel">
-                <div class="panel-body">
-                    @* <hr/> *@
-                    <h5>Nama RM</h5>
-                    <p>Nama dari RM atau penangung jawab nasabah.</p>
-                    <div class="form-group">
-                        <div class="input-group col-lg-12">
-                            <select asp-for="KODE_RM" asp-items="ViewBag.listRM" class="form-control select2-list-rm">
-                                @*<option disabled selected>- PILIH -</option>*@
-                            </select>
-                        </div>
-                    </div>
-
-                    <h5>Nama Cabang Pengelolaan</h5>
-                    <p>Nama cabang yang akan melakukan maintenace nasabah priority.</p>
-                    <div class="form-group">
-                        <div class="input-group col-lg-12">
-                            <select asp-for="KD_UNITKER" asp-items="ViewBag.listKantor" class="form-control select2-list-kantor">
-                                @*<option disabled selected>- PILIH -</option>*@
-                            </select>
-                        </div>
-                    </div>
-
-                    <h5>Tier AUM</h5>
-                    <p>Tier 1, Tier 2, Tier 3.</p>
-                    <div class="form-group">
-                        <div class="input-group col-lg-12">
-                            <select asp-for="TIER" asp-items="ViewBag.listTier" class="form-control select2-list-tier">
-                                @*<option disabled selected>- PILIH -</option>*@
-                            </select>
-                        </div>
-                    </div>
-
-                    <h5>No. SID</h5>
-                    <p>Single Investor Identification.</p>
-                    <div class="form-group">
-                        <div class="input-group col-lg-12">
-                            <input asp-for="SID" type="text" class="form-control">
-                            <span class="input-group-btn">
-                                <button type="button" id="bCekSID" class="btn btn-primary ladda-button ldCekSID" data-style="zoom-in">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                        </div>
-                    </div>
-
-                    <h5>Kelompok Nasabah</h5>
-                    <p>Kelompok Khusus & Umum.</p>
-                    <div class="form-group">
-                        <div class="input-group col-lg-12">
-                            <select asp-for="KELOMPOK_NASABAH" asp-items="ViewBag.listKelompok" class="form-control select2-list-kelompok">
-                                @*<option disabled selected>- PILIH -</option>*@
-                            </select>
-                        </div>
-                    </div>
-                </div>
+        <div class="hpanel">
+            <div class="panel-heading hbuilt">
+                @* <h3 class="m-b-xs">FILTER</h3> *@
+                <i class="fa fa-quote-right"></i> Rincian DPK & Pinjaman
             </div>
-
-            <div class="hpanel">
-                <div class="panel-heading hbuilt">
-                    @* <h3 class="m-b-xs">FILTER</h3> *@
-                    <i class="fa fa-quote-right"></i> Investasi SBN
-                </div>
-                <div class="panel-body">
-                    <table id="dListSBN" class="table table-bordered table-striped" style="clear: both">
-                        <tbody></tbody>
-                    </table>
-                </div>
+            <div class="panel-body">
+                <table id="dListSaldo" class="table table-bordered table-striped" style="clear: both">
+                    <tbody></tbody>
+                </table>
             </div>
         </div>
     </div>
-</form>
 
-<script type="text/javascript">
-    $('.select2-list-rm').select2();
-    $('.select2-list-kantor').select2();
-    $('.select2-list-kelompok').select2();
-    $('.select2-list-tier').select2();
+    <div class="col-lg-6">
+        <div class="hpanel">
+            <div class="panel-body">
+                @* <hr/> *@
+                <h5>Nama RM</h5>
+                <p>Nama dari RM atau penangung jawab nasabah.</p>
+                <div class="form-group">
+                    <div class="input-group col-lg-12">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
 
-    $('#bCekSID').click(function () {
-        GetDataSID($('#SID').val());
-    })
+                <h5>Nama Cabang Pengelolaan</h5>
+                <p>Nama cabang yang akan melakukan maintenace nasabah priority.</p>
+                <div class="form-group">
+                    <div class="input-group col-lg-12">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
 
-    $('#bProses').click(function () {
-        SimpanCustomer();
-    })
-</script>
+                <h5>Tier AUM</h5>
+                <p>Tier 1, Tier 2, Tier 3.</p>
+                <div class="form-group">
+                    <div class="input-group col-lg-12">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                
+                <h5>No. SID</h5>
+                <p>Single Investor Identification.</p>
+                <div class="form-group">
+                    <div class="input-group col-lg-12">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+                <h5>Kelompok Nasabah</h5>
+                <p>Kelompok Khusus & Umum.</p>
+                <div class="form-group">
+                    <div class="input-group col-lg-12">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hpanel">
+            <div class="panel-heading hbuilt">
+                @* <h3 class="m-b-xs">FILTER</h3> *@
+                <i class="fa fa-quote-right"></i> Investasi SBN
+            </div>
+            <div class="panel-body">
+                <table id="dListSaldo" class="table table-bordered table-striped" style="clear: both">
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

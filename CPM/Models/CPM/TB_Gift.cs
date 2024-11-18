@@ -1,10 +1,8 @@
 ﻿using Newtonsoft.Json.Serialization;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CPM_Project.Models.CPM
 {
-    [Table("tb_gift")]
     public class TB_Gift
     {
         [Key]
@@ -28,9 +26,6 @@ namespace CPM_Project.Models.CPM
 
         [Display(Name = "Tanggal Pemberian")]
         public DateTime TGL_GIFT { get; set; }
-
-        [Display(Name = "Frekuensi Pemberian")]
-        public int FREKUENSI { get;set; }
 
         [Display(Name = "Biaya")]
         public decimal BIAYA {  get; set; }
