@@ -30,9 +30,6 @@ namespace CPM_Project.Models.CPM
         [Display(Name = "Nama Airport")]
         public string NM_AIRPORT {  get; set; }
 
-        [Display(Name = "Frekuensi Penggunaan")]
-        public int FREKUENSI { get;set; }
-
         [Display(Name = "Biaya")]
         public decimal BIAYA {  get; set; }
 

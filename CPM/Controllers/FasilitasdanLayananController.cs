@@ -413,7 +413,6 @@ namespace CPM_Project.Controllers
                                 TGL_PENGGUNAAN = a.TGL_PENGGUNAAN,
                                 JUMLAH_PAX = a.JUMLAH_PAX,
                                 NM_AIRPORT = a.NM_AIRPORT,
-                                FREKUENSI = a.FREKUENSI,
                                 BIAYA = a.BIAYA
                             }).ToList();
 

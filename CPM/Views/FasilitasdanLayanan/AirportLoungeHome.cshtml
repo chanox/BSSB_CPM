@@ -87,7 +87,6 @@
                             <th class="text-center">Tanggal Penggunaan</th>
                             <th class="text-center">Jumlah Pax</th>
                             <th class="text-center">Nama Airport</th>
-                            <th class="text-center">Frekuensi</th>
                             <th class="text-center">Biaya</th>
                             <th class="text-center">Action</th>
                         </tr>
@@ -368,7 +367,6 @@
                     { data: 'TGL_PENGGUNAAN', className: 'text-left', render: function (d) { return moment(d).format("DD/MM/YYYY") } },
                     { data: 'JUMLAH_PAX', className: 'text-left', render: function (data, type, row) { return data } },
                     { data: 'NM_AIRPORT', className: 'text-left', render: function (data, type, row) { return data } },
-                    { data: 'FREKUENSI', className: 'text-left', render: function (data, type, row) { return data } },
                     { data: 'BIAYA', className: 'text-left', render: function (data, type, row) { return data } },
                     {
                         data: null,
