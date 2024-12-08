@@ -1,8 +1,10 @@
 ﻿using Newtonsoft.Json.Serialization;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CPM_Project.Models.CPM
 {
+    [Table("tb_aplounge")]
     public class TB_Aplounge
     {
         [Key]
@@ -29,6 +31,9 @@ namespace CPM_Project.Models.CPM
 
         [Display(Name = "Nama Airport")]
         public string NM_AIRPORT {  get; set; }
+
+        [Display(Name = "Frekuensi Penggunaan")]
+        public int FREKUENSI { get;set; }
 
         [Display(Name = "Biaya")]
         public decimal BIAYA {  get; set; }

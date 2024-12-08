@@ -29,9 +29,7 @@
         <div class="form-group">
             <label asp-for="TUJUAN_GIFT" class="control-label col-md-3"></label>
             <div class="col-md-9">
-                <select asp-for="TUJUAN_GIFT" asp-items="ViewBag.ListTujuanGift" class="form-control select2-kantor">
-                    @*<option disabled selected>- PILIH -</option>*@
-                </select>
+                <input asp-for="TUJUAN_GIFT" class="form-control" />
                 <span asp-validation-for="TUJUAN_GIFT" class="text-danger"></span>
             </div>
         </div>
@@ -40,6 +38,13 @@
             <div class="col-md-9">
                 <input asp-for="TGL_GIFT" class="form-control" type="date" />
                 <span asp-validation-for="TGL_GIFT" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FREKUENSI" class="control-label col-md-3"></label>
+            <div class="col-md-9">
+                <input asp-for="FREKUENSI" class="form-control" type="number" />
+                <span asp-validation-for="FREKUENSI" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
